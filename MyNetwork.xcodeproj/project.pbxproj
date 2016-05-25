@@ -13,6 +13,7 @@
 		E05E28E51CF5D83900B5AF8D /* MyNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E05E28E31CF5D83900B5AF8D /* MyNetwork.xcdatamodeld */; };
 		E05E28E71CF5D83900B5AF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E05E28E61CF5D83900B5AF8D /* Assets.xcassets */; };
 		E05E28EA1CF5D83900B5AF8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05E28E81CF5D83900B5AF8D /* LaunchScreen.storyboard */; };
+		E05E28F21CF5DAE800B5AF8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05E28F11CF5DAE800B5AF8D /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E05E28E61CF5D83900B5AF8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E05E28E91CF5D83900B5AF8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E05E28EB1CF5D83900B5AF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E05E28F11CF5DAE800B5AF8D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				E05E28DC1CF5D83900B5AF8D /* AppDelegate.swift */,
 				E05E28DE1CF5D83900B5AF8D /* ViewController.swift */,
+				E05E28F11CF5DAE800B5AF8D /* SettingsViewController.swift */,
 				E05E28E01CF5D83900B5AF8D /* Main.storyboard */,
 				E05E28E61CF5D83900B5AF8D /* Assets.xcassets */,
 				E05E28E81CF5D83900B5AF8D /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				E05E28DF1CF5D83900B5AF8D /* ViewController.swift in Sources */,
 				E05E28E51CF5D83900B5AF8D /* MyNetwork.xcdatamodeld in Sources */,
 				E05E28DD1CF5D83900B5AF8D /* AppDelegate.swift in Sources */,
+				E05E28F21CF5DAE800B5AF8D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
