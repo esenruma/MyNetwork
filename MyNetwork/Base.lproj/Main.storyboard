@@ -200,15 +200,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories for Personal Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94K-M2-c6J">
-                                <rect key="frame" x="20" y="78" width="335" height="28"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.81960784310000001" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuW-Ln-VbG">
-                                <rect key="frame" x="88" y="114" width="199" height="142"/>
+                                <rect key="frame" x="88" y="77" width="199" height="142"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="cD4-ai-NpD">
                                     <rect key="frame" x="0.0" y="0.0" width="199" height="142"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,91 +224,107 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Own Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brR-2W-C7A">
-                                <rect key="frame" x="20" y="264" width="335" height="28"/>
+                                <rect key="frame" x="20" y="227" width="335" height="28"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.81960784310000001" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gds-Un-rmY">
-                                <rect key="frame" x="20" y="300" width="264" height="21"/>
+                                <rect key="frame" x="20" y="263" width="264" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Codes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaJ-k8-DVv">
-                                <rect key="frame" x="292" y="300" width="63" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Code:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaJ-k8-DVv">
+                                <rect key="frame" x="292" y="263" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1st" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-Zn-rkk">
-                                <rect key="frame" x="20" y="329" width="264" height="30"/>
+                                <rect key="frame" x="20" y="292" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2nd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRn-Pu-cmB">
-                                <rect key="frame" x="20" y="367" width="264" height="30"/>
+                                <rect key="frame" x="20" y="330" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3rd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-zK-lFK">
-                                <rect key="frame" x="20" y="405" width="264" height="30"/>
+                                <rect key="frame" x="20" y="368" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3P-b4-jLK">
-                                <rect key="frame" x="20" y="443" width="264" height="30"/>
+                                <rect key="frame" x="20" y="406" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-Ih-uBk">
-                                <rect key="frame" x="20" y="481" width="264" height="30"/>
+                                <rect key="frame" x="20" y="444" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oyw-Xd-1gl">
-                                <rect key="frame" x="20" y="519" width="264" height="30"/>
+                                <rect key="frame" x="20" y="482" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1st" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUN-nT-CBs">
-                                <rect key="frame" x="292" y="329" width="63" height="30"/>
+                                <rect key="frame" x="292" y="292" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2nd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsJ-WS-ddp">
-                                <rect key="frame" x="292" y="367" width="63" height="30"/>
+                                <rect key="frame" x="292" y="330" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3rd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYm-SA-DgN">
-                                <rect key="frame" x="292" y="405" width="63" height="30"/>
+                                <rect key="frame" x="292" y="368" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFS-U5-oXj">
-                                <rect key="frame" x="292" y="443" width="63" height="30"/>
+                                <rect key="frame" x="292" y="406" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDc-ZO-JQU">
-                                <rect key="frame" x="292" y="481" width="63" height="30"/>
+                                <rect key="frame" x="292" y="444" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcA-Hx-hqN">
-                                <rect key="frame" x="292" y="519" width="63" height="30"/>
+                                <rect key="frame" x="292" y="482" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M60-Ob-bed">
-                                <rect key="frame" x="114" y="557" width="147" height="30"/>
+                                <rect key="frame" x="116" y="568" width="147" height="30"/>
                                 <state key="normal" title="Save New Categories"/>
+                                <connections>
+                                    <action selector="saveNewCategories:" destination="YAD-ZL-XM0" eventType="touchUpInside" id="w94-GV-npq"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UtT-Xf-grW">
+                                <rect key="frame" x="20" y="520" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7th" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjJ-fq-mDs">
+                                <rect key="frame" x="292" y="520" width="63" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eun-Za-8Wa">
-                                <rect key="frame" x="90" y="595" width="195" height="30"/>
+                                <rect key="frame" x="92" y="606" width="195" height="30"/>
                                 <state key="normal" title="Revert to Default Categories"/>
+                                <connections>
+                                    <action selector="activateDefaultCategories:" destination="YAD-ZL-XM0" eventType="touchUpInside" id="gIQ-q2-i6t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -326,6 +335,22 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fifthCodeField" destination="eDc-ZO-JQU" id="t32-R5-Dna"/>
+                        <outlet property="fifthTextField" destination="JuA-Ih-uBk" id="dgg-H8-uhF"/>
+                        <outlet property="firstCodeField" destination="ZUN-nT-CBs" id="TDI-2U-lb8"/>
+                        <outlet property="firstTextField" destination="oxQ-Zn-rkk" id="ZKc-2u-GGT"/>
+                        <outlet property="fourthCodeField" destination="QFS-U5-oXj" id="JPr-4S-0vO"/>
+                        <outlet property="fourthTextField" destination="e3P-b4-jLK" id="9b0-sm-h3k"/>
+                        <outlet property="secondCodeField" destination="RsJ-WS-ddp" id="dme-Ob-vpU"/>
+                        <outlet property="secondTextField" destination="VRn-Pu-cmB" id="SX4-cv-0Bc"/>
+                        <outlet property="seventhCodeField" destination="pjJ-fq-mDs" id="RAY-Je-Kmr"/>
+                        <outlet property="seventhTextField" destination="UtT-Xf-grW" id="eUz-MT-Qjz"/>
+                        <outlet property="sixthCodeField" destination="mcA-Hx-hqN" id="uA4-w5-Jv4"/>
+                        <outlet property="sixthTextField" destination="Oyw-Xd-1gl" id="g2x-fa-4OW"/>
+                        <outlet property="thirdCodeField" destination="bYm-SA-DgN" id="EKA-zJ-dBJ"/>
+                        <outlet property="thirdTextField" destination="fRF-zK-lFK" id="Bkh-bN-pe6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QH7-uU-KhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

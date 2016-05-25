@@ -56,6 +56,50 @@ class ViewController: UIViewController {
     var namesFor6thCat = [String]()
     var namesFor7thCat = [String]()
     
+    
+    
+// ------------------------------------------------------
+    func loadPersistenceToGlobalVars() {
+        
+        let new_newFirstCat = NSUserDefaults.standardUserDefaults().objectForKey("newFirstCat")
+        newFirstCat = String(new_newFirstCat)
+        let new_newFirstCode = NSUserDefaults.standardUserDefaults().objectForKey("newFirstCode")
+        newFirstCode = String(new_newFirstCode)
+        
+        let new_newSecondCat = NSUserDefaults.standardUserDefaults().objectForKey("newSecondCat")
+        newSecondCat = String(new_newSecondCat)
+        let new_newSecondCode = NSUserDefaults.standardUserDefaults().objectForKey("newSecondCode")
+        newSecondCode = String(new_newSecondCode)
+        
+        let new_newThirdCat = NSUserDefaults.standardUserDefaults().objectForKey("newThirdCat")
+        newThirdCat = String(new_newThirdCat)
+        let new_newThirdCode = NSUserDefaults.standardUserDefaults().objectForKey("newThirdCode")
+        newThirdCode = String(new_newThirdCode)
+        
+        let new_newFourthCat = NSUserDefaults.standardUserDefaults().objectForKey("newFourthCat")
+        newFourthCat = String(new_newFourthCat)
+        let new_newFourthCode = NSUserDefaults.standardUserDefaults().objectForKey("newFourthCode")
+        newFourthCode = String(new_newFourthCode)
+        
+        let new_newFifthCat = NSUserDefaults.standardUserDefaults().objectForKey("newFifthCat")
+        newFifthCat = String(new_newFifthCat)
+        let new_newFifthCode = NSUserDefaults.standardUserDefaults().objectForKey("newFifthCode")
+        newFifthCode = String(new_newFifthCode)
+        
+        let new_newSixthCat = NSUserDefaults.standardUserDefaults().objectForKey("newSixthCat")
+        newSixthCat = String(new_newSixthCat)
+        let new_newSixthCode = NSUserDefaults.standardUserDefaults().objectForKey("newSixthCode")
+        newSixthCode = String(new_newSixthCode)
+        
+        let new_newSeventhCat = NSUserDefaults.standardUserDefaults().objectForKey("newSeventhCat")
+        newSeventhCat = String(new_newSeventhCat)
+        let new_newSeventhCode = NSUserDefaults.standardUserDefaults().objectForKey("newSeventhCode")
+        newSeventhCode = String(new_newSeventhCode)
+        
+    }
+
+    
+    
 // ------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +112,16 @@ class ViewController: UIViewController {
             self.fifthCatLabel.text = dCat5
             self.sixthCatLabel.text = dCat6
             self.seventhCatLabel.text = dCat7
+            
+        } else if categoriesChosen == 1 {
+            
+            self.firstCatLabel.text = newFirstCat
+            self.secondCatLabel.text = newSecondCat
+            self.thirdCatLabel.text = newThirdCat
+            self.fourthCatLabel.text = newFourthCat
+            self.fifthCatLabel.text = newFifthCat
+            self.sixthCatLabel.text = newSixthCat
+            self.seventhCatLabel.text = newSeventhCat
         }
         
         // ** Call Total contacts in Device ** [Count]
@@ -86,60 +140,118 @@ class ViewController: UIViewController {
                 print("nothing in Contacts")
                 
             } else {
+                
                 self.totalContactsNumber.text = String(results.count)
+                
                 for result in results {
                     
-                    switch result.namePrefix {
-                    case dCatCode1:
-                        print(result.givenName)
-                        counterForPrefixCode1 += 1
-                        
-                        // Add name to Array
-                        self.namesFor1stCat.append(result.givenName)
-                       
-                    case dCatCode2:
-                        print(result.givenName)
-                        counterForPrefixCode2 += 1
-                        
-                        self.namesFor2ndCat.append(result.givenName)
-                        
-                    case dCatCode3:
-                        print(result.givenName)
-                        counterForPrefixCode3 += 1
-                        
-                        self.namesFor3rdCat.append(result.givenName)
-                        
-                    case dCatCode4:
-                        print(result.givenName)
-                        counterForPrefixCode4 += 1
+                    if categoriesChosen == 0 {
                     
-                        self.namesFor4thCat.append(result.givenName)
+                        switch result.namePrefix {
+                        case dCatCode1:
+                            print(result.givenName)
+                            counterForPrefixCode1 += 1
                         
-                    case dCatCode5:
-                        print(result.givenName)
-                        counterForPrefixCode5 += 1
+                            // Add name to Array
+                            self.namesFor1stCat.append(result.givenName)
+                       
+                        case dCatCode2:
+                            print(result.givenName)
+                            counterForPrefixCode2 += 1
                         
-                        self.namesFor5thCat.append(result.givenName)
+                            self.namesFor2ndCat.append(result.givenName)
                         
-                    case dCatCode6:
-                        print(result.givenName)
-                        counterForPrefixCode6 += 1
+                        case dCatCode3:
+                            print(result.givenName)
+                            counterForPrefixCode3 += 1
                         
-                        self.namesFor6thCat.append(result.givenName)
+                            self.namesFor3rdCat.append(result.givenName)
                         
-                    case dCatCode7:
-                        print(result.givenName)
-                        counterForPrefixCode7 += 1
+                        case dCatCode4:
+                            print(result.givenName)
+                            counterForPrefixCode4 += 1
+                    
+                            self.namesFor4thCat.append(result.givenName)
                         
-                        self.namesFor7thCat.append(result.givenName)
+                        case dCatCode5:
+                            print(result.givenName)
+                            counterForPrefixCode5 += 1
                         
-                    default: break
-                        // Do Nothing
+                            self.namesFor5thCat.append(result.givenName)
                         
-                    } // End SWITCH
+                        case dCatCode6:
+                            print(result.givenName)
+                            counterForPrefixCode6 += 1
+                        
+                            self.namesFor6thCat.append(result.givenName)
+                        
+                        case dCatCode7:
+                            print(result.givenName)
+                            counterForPrefixCode7 += 1
+                        
+                            self.namesFor7thCat.append(result.givenName)
+                        
+                        default: break
+                            // Do Nothing
+                        
+                        } // End SWITCH for categoriesChosen" == 0
+                        
+                    } else if categoriesChosen == 1 {
+                        
+                        switch result.namePrefix {
+                        case newFirstCode:
+                            print(result.givenName)
+                            counterForPrefixCode1 += 1
+                            
+                            // Add name to Array
+                            self.namesFor1stCat.append(result.givenName)
+                            
+                        case newSecondCode:
+                            print(result.givenName)
+                            counterForPrefixCode2 += 1
+                            
+                            self.namesFor2ndCat.append(result.givenName)
+                            
+                        case newThirdCode:
+                            print(result.givenName)
+                            counterForPrefixCode3 += 1
+                            
+                            self.namesFor3rdCat.append(result.givenName)
+                            
+                        case newFourthCode:
+                            print(result.givenName)
+                            counterForPrefixCode4 += 1
+                            
+                            self.namesFor4thCat.append(result.givenName)
+                            
+                        case newFifthCode:
+                            print(result.givenName)
+                            counterForPrefixCode5 += 1
+                            
+                            self.namesFor5thCat.append(result.givenName)
+                            
+                        case newSixthCode:
+                            print(result.givenName)
+                            counterForPrefixCode6 += 1
+                            
+                            self.namesFor6thCat.append(result.givenName)
+                            
+                        case newSeventhCode:
+                            print(result.givenName)
+                            counterForPrefixCode7 += 1
+                            
+                            self.namesFor7thCat.append(result.givenName)
+                            
+                        default: break
+                            // Do Nothing
+                            
+                        } // End SWITCH for categoriesChosen" == 1
+                        
+                    } // End IF.. checking "categoriesChosen" == 0 or 1?
                     
                 } // End FOR...IN...
                 
+                // ** Calculations + Show in Labels **
                 let sizeOfPersonalNetwork = self.counterForPrefixCode1 + self.counterForPrefixCode2 + self.counterForPrefixCode3 + self.counterForPrefixCode4 + self.counterForPrefixCode5 + self.counterForPrefixCode6 + self.counterForPrefixCode7
                 
                 self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
@@ -158,9 +270,9 @@ class ViewController: UIViewController {
             
         } catch {
         }
-
         
-        
+        // Load Saved Persistent New 'Cats + Codes' to Out of Class Vars
+        loadPersistenceToGlobalVars()
         
     }
 
