@@ -9,9 +9,30 @@
 import UIKit
 import Contacts
 
-// ------------------------------------------------------
-let defaultCategories = ["Friends": "F.", "Family": "fam.", "Work": "w.", "Social": "s.", "InnerCircle": "in", "PersonalAdvisor": "ad."]
+// -----------default-Categories--------------------------
+let dCat1 = "Friends"               // F.
+let dCatCode1 = "F."
 
+let dCat2 = "Family"                // fam.
+let dCatCode2 = "fam."
+
+let dCat3 = "Work"                  // w.
+let dCatCode3 = "w."
+
+let dCat4 = "Alumni"                  // al.
+let dCatCode4 = "al."
+
+let dCat5 = "Social"                // s.
+let dCatCode5 = "s."
+
+let dCat6 = "Inner Circle"          // in.
+let dCatCode6 = "in."
+
+let dCat7 = "Personal Advisor"      // ad.
+let dCatCode7 = "ad."
+// ------------------------------------------------------
+
+// ** For New Inputed Categories **
 var firstCat = String()
 var firstCode = String()
 
@@ -29,6 +50,9 @@ var fifthCode = String()
 
 var sixthCat = String()
 var sixthCode = String()
+
+var seventhCat = String()
+var seventhCode = String()
 // ------------------------------------------------------
 
 // ------------------------------------------------------

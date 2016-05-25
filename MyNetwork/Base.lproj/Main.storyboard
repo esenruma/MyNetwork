@@ -129,6 +129,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPT-ny-VRm">
+                                <rect key="frame" x="20" y="395" width="182" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTQ-ST-lVX">
+                                <rect key="frame" x="256" y="395" width="84" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -147,6 +159,8 @@
                         <outlet property="fourthCatNumber" destination="Quk-48-FyG" id="JJn-hH-CNd"/>
                         <outlet property="secondCatLabel" destination="gFn-du-xqO" id="9xQ-gh-gty"/>
                         <outlet property="secondCatNumber" destination="Er7-21-ZUO" id="0T7-w1-c1e"/>
+                        <outlet property="seventhCatLabel" destination="gPT-ny-VRm" id="olW-hJ-wgq"/>
+                        <outlet property="seventhCatNumber" destination="YTQ-ST-lVX" id="pRt-bY-hf2"/>
                         <outlet property="sixthCatLabel" destination="E0N-k3-DzD" id="pvI-2U-dz9"/>
                         <outlet property="sixthCatNumber" destination="HHH-Tf-q0a" id="w2c-Pm-voS"/>
                         <outlet property="thirdCatLabel" destination="xBY-18-EKV" id="6RL-yM-Rsm"/>
@@ -206,8 +220,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ6-VD-R4s">
-                                            <rect key="frame" x="26" y="32" width="147" height="97"/>
-                                            <string key="text">Friends:			F. Family:			fam. Work:			w. Social:			s. Inner Circle:		in. Personal Advisor:	a.</string>
+                                            <rect key="frame" x="26" y="26" width="147" height="103"/>
+                                            <string key="text">Friends:			F. Family:			fam. Work:			w. Alumni:			al. Social:			s. Inner Circle:		in. Personal Advisor:	a.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
