@@ -9,9 +9,32 @@
 import UIKit
 import Contacts
 
-var categoriesChosen = 0        // 0 = Default, 1 = new Categories
+var categoriesChosen = 0        // 0 = Default, 1 = new Categories(Future)
+
+// -----------default-Categories------------------------
+let dCat1 = "Friends"               // f.
+let dCatCode1 = "f."
+
+let dCat2 = "Family"                // fam.
+let dCatCode2 = "fam."
+
+let dCat3 = "Work"                  // w.
+let dCatCode3 = "w."
+
+let dCat4 = "Alumni"                // al.
+let dCatCode4 = "al."
+
+let dCat5 = "Social"                // s.
+let dCatCode5 = "s."
+
+let dCat6 = "Inner Circle"          // in.
+let dCatCode6 = "in."
+
+let dCat7 = "Personal Advisor"      // ad.
+let dCatCode7 = "ad."
 
 
+// -----------------------------------------------------
 class ViewController: UIViewController {
 
     @IBOutlet weak var totalContactsNumber: UILabel!
@@ -38,7 +61,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var seventhCatLabel: UILabel!
     @IBOutlet weak var seventhCatNumber: UILabel!
     
-    
+    // Counters for the x7 categories in Contacts DB
     var counterForPrefixCode1 = Int()
     var counterForPrefixCode2 = Int()
     var counterForPrefixCode3 = Int()
@@ -47,63 +70,28 @@ class ViewController: UIViewController {
     var counterForPrefixCode6 = Int()
     var counterForPrefixCode7 = Int()
     
-    // Stored names of results of network Analysis
-    var namesFor1stCat = [String]()
-    var namesFor2ndCat = [String]()
-    var namesFor3rdCat = [String]()
-    var namesFor4thCat = [String]()
-    var namesFor5thCat = [String]()
-    var namesFor6thCat = [String]()
-    var namesFor7thCat = [String]()
+    // Stored names-Arrays of results of network Count per Category
+    var namesFor1stCatArray = [String]()        // ================
+    var namesFor2ndCatArray = [String]()        // ================
+    var namesFor3rdCatArray = [String]()        // ================
+    var namesFor4thCatArray = [String]()        // ================
+    var namesFor5thCatArray = [String]()        // ================
+    var namesFor6thCatArray = [String]()        // ================
+    var namesFor7thCatArray = [String]()        // ================
+    // ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
     
     
-    
-// ------------------------------------------------------
-    func loadPersistenceToGlobalVars() {
-        
-        let new_newFirstCat = NSUserDefaults.standardUserDefaults().objectForKey("newFirstCat")
-        newFirstCat = String(new_newFirstCat)
-        let new_newFirstCode = NSUserDefaults.standardUserDefaults().objectForKey("newFirstCode")
-        newFirstCode = String(new_newFirstCode)
-        
-        let new_newSecondCat = NSUserDefaults.standardUserDefaults().objectForKey("newSecondCat")
-        newSecondCat = String(new_newSecondCat)
-        let new_newSecondCode = NSUserDefaults.standardUserDefaults().objectForKey("newSecondCode")
-        newSecondCode = String(new_newSecondCode)
-        
-        let new_newThirdCat = NSUserDefaults.standardUserDefaults().objectForKey("newThirdCat")
-        newThirdCat = String(new_newThirdCat)
-        let new_newThirdCode = NSUserDefaults.standardUserDefaults().objectForKey("newThirdCode")
-        newThirdCode = String(new_newThirdCode)
-        
-        let new_newFourthCat = NSUserDefaults.standardUserDefaults().objectForKey("newFourthCat")
-        newFourthCat = String(new_newFourthCat)
-        let new_newFourthCode = NSUserDefaults.standardUserDefaults().objectForKey("newFourthCode")
-        newFourthCode = String(new_newFourthCode)
-        
-        let new_newFifthCat = NSUserDefaults.standardUserDefaults().objectForKey("newFifthCat")
-        newFifthCat = String(new_newFifthCat)
-        let new_newFifthCode = NSUserDefaults.standardUserDefaults().objectForKey("newFifthCode")
-        newFifthCode = String(new_newFifthCode)
-        
-        let new_newSixthCat = NSUserDefaults.standardUserDefaults().objectForKey("newSixthCat")
-        newSixthCat = String(new_newSixthCat)
-        let new_newSixthCode = NSUserDefaults.standardUserDefaults().objectForKey("newSixthCode")
-        newSixthCode = String(new_newSixthCode)
-        
-        let new_newSeventhCat = NSUserDefaults.standardUserDefaults().objectForKey("newSeventhCat")
-        newSeventhCat = String(new_newSeventhCat)
-        let new_newSeventhCode = NSUserDefaults.standardUserDefaults().objectForKey("newSeventhCode")
-        newSeventhCode = String(new_newSeventhCode)
-        
-    }
-
-    
-    
-// ------------------------------------------------------
+    // ------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadApp()
+    }
+
+    // ------------------------------------------------------
+    func loadApp() {
+        
+        // ** default vs. New Categories **
         if categoriesChosen == 0 {
             self.firstCatLabel.text = dCat1
             self.secondCatLabel.text = dCat2
@@ -113,18 +101,9 @@ class ViewController: UIViewController {
             self.sixthCatLabel.text = dCat6
             self.seventhCatLabel.text = dCat7
             
-        } else if categoriesChosen == 1 {
-            
-            self.firstCatLabel.text = newFirstCat
-            self.secondCatLabel.text = newSecondCat
-            self.thirdCatLabel.text = newThirdCat
-            self.fourthCatLabel.text = newFourthCat
-            self.fifthCatLabel.text = newFifthCat
-            self.sixthCatLabel.text = newSixthCat
-            self.seventhCatLabel.text = newSeventhCat
         }
         
-        // ** Call Total contacts in Device ** [Count]
+        // ** Get Total contacts in Device + Count/Save per Category
         let containerId = CNContactStore().defaultContainerIdentifier()
         
         let keysToFetch = [CNContactNamePrefixKey,
@@ -137,7 +116,7 @@ class ViewController: UIViewController {
             let results = try CNContactStore().unifiedContactsMatchingPredicate(predicate, keysToFetch: keysToFetch)
             
             if results.isEmpty {
-                print("nothing in Contacts")
+                emptyContactsAlert()
                 
             } else {
                 
@@ -146,112 +125,61 @@ class ViewController: UIViewController {
                 for result in results {
                     
                     if categoriesChosen == 0 {
-                    
+                        
                         switch result.namePrefix {
                         case dCatCode1:
                             print(result.givenName)
                             counterForPrefixCode1 += 1
-                        
+                            
                             // Add name to Array
-                            self.namesFor1stCat.append(result.givenName)
-                       
+                            self.namesFor1stCatArray.append(result.givenName)
+                            
                         case dCatCode2:
                             print(result.givenName)
                             counterForPrefixCode2 += 1
-                        
-                            self.namesFor2ndCat.append(result.givenName)
-                        
+                            
+                            self.namesFor2ndCatArray.append(result.givenName)
+                            
                         case dCatCode3:
                             print(result.givenName)
                             counterForPrefixCode3 += 1
-                        
-                            self.namesFor3rdCat.append(result.givenName)
-                        
+                            
+                            self.namesFor3rdCatArray.append(result.givenName)
+                            
                         case dCatCode4:
                             print(result.givenName)
                             counterForPrefixCode4 += 1
-                    
-                            self.namesFor4thCat.append(result.givenName)
-                        
+                            
+                            self.namesFor4thCatArray.append(result.givenName)
+                            
                         case dCatCode5:
                             print(result.givenName)
                             counterForPrefixCode5 += 1
-                        
-                            self.namesFor5thCat.append(result.givenName)
-                        
+                            
+                            self.namesFor5thCatArray.append(result.givenName)
+                            
                         case dCatCode6:
                             print(result.givenName)
                             counterForPrefixCode6 += 1
-                        
-                            self.namesFor6thCat.append(result.givenName)
-                        
+                            
+                            self.namesFor6thCatArray.append(result.givenName)
+                            
                         case dCatCode7:
                             print(result.givenName)
                             counterForPrefixCode7 += 1
-                        
-                            self.namesFor7thCat.append(result.givenName)
-                        
-                        default: break
-                            // Do Nothing
-                        
-                        } // End SWITCH for categoriesChosen" == 0
-                        
-                    } else if categoriesChosen == 1 {
-                        
-                        switch result.namePrefix {
-                        case newFirstCode:
-                            print(result.givenName)
-                            counterForPrefixCode1 += 1
                             
-                            // Add name to Array
-                            self.namesFor1stCat.append(result.givenName)
-                            
-                        case newSecondCode:
-                            print(result.givenName)
-                            counterForPrefixCode2 += 1
-                            
-                            self.namesFor2ndCat.append(result.givenName)
-                            
-                        case newThirdCode:
-                            print(result.givenName)
-                            counterForPrefixCode3 += 1
-                            
-                            self.namesFor3rdCat.append(result.givenName)
-                            
-                        case newFourthCode:
-                            print(result.givenName)
-                            counterForPrefixCode4 += 1
-                            
-                            self.namesFor4thCat.append(result.givenName)
-                            
-                        case newFifthCode:
-                            print(result.givenName)
-                            counterForPrefixCode5 += 1
-                            
-                            self.namesFor5thCat.append(result.givenName)
-                            
-                        case newSixthCode:
-                            print(result.givenName)
-                            counterForPrefixCode6 += 1
-                            
-                            self.namesFor6thCat.append(result.givenName)
-                            
-                        case newSeventhCode:
-                            print(result.givenName)
-                            counterForPrefixCode7 += 1
-                            
-                            self.namesFor7thCat.append(result.givenName)
+                            self.namesFor7thCatArray.append(result.givenName)
                             
                         default: break
                             // Do Nothing
                             
-                        } // End SWITCH for categoriesChosen" == 1
+                        } // End SWITCH for "categoriesChosen" == 0
                         
                     } // End IF.. checking "categoriesChosen" == 0 or 1?
                     
-                } // End FOR...IN...
+                } // End FOR...IN... iteration to get Category Counts
                 
-                // ** Calculations + Show in Labels **
+                // ** Calculation + Show in Labels **
                 let sizeOfPersonalNetwork = self.counterForPrefixCode1 + self.counterForPrefixCode2 + self.counterForPrefixCode3 + self.counterForPrefixCode4 + self.counterForPrefixCode5 + self.counterForPrefixCode6 + self.counterForPrefixCode7
                 
                 self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
@@ -264,23 +192,39 @@ class ViewController: UIViewController {
                 self.sixthCatNumber.text = String(self.counterForPrefixCode6)
                 self.seventhCatNumber.text = String(self.counterForPrefixCode7)
                 
-                print(self.namesFor1stCat)
-            
             } // End IF...ELSE...
             
         } catch {
+            print("Error-Fetching results from Contacts Framework")
         }
         
-        // Load Saved Persistent New 'Cats + Codes' to Out of Class Vars
-        loadPersistenceToGlobalVars()
+        // Check what is in name-Arrays...
+        print(namesFor1stCatArray)
+        print(namesFor2ndCatArray)
+        print(namesFor3rdCatArray)
+        print(namesFor4thCatArray)
+        print(namesFor5thCatArray)
+        print(namesFor6thCatArray)
+        print(namesFor7thCatArray)
         
+    } // End FUNC
+    
+    // --------------------Alerts----------------------------
+    func emptyContactsAlert() {
+        let alert = UIAlertController(title: "ALERT", message: "Nothing In Contacts DB", preferredStyle: .Alert) //  capital A for .Alert
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){ // or .Default
+            UIAlertAction in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
+    // ------------------------------------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
