@@ -80,14 +80,35 @@ class ViewController: UIViewController {
     var namesFor7thCatArray = [String]()        // ================
     // ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
     
+    // Blurs to hold objects easier for AutoConstraints
+    @IBOutlet weak var blurBottom: UIVisualEffectView!
+    @IBOutlet weak var blurMiddle: UIVisualEffectView!
+    @IBOutlet weak var blurTopBig: UIVisualEffectView!    
+    
     
     // ------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadApp()
-    }
-
+        // *** Privacy Check ***
+        let store = CNContactStore()
+        switch CNContactStore.authorizationStatusForEntityType(.Contacts) {
+        case .Authorized:
+            loadApp()
+        case .NotDetermined, .Denied:
+            store.requestAccessForEntityType(.Contacts) { succeeded, err in
+                guard err == nil && succeeded else {
+                    return
+                }
+            }
+        default:
+            print("Not handled")
+        } // End Switch for 'Privacy Check'
+        
+        
+        
+    } // End FUNC
+    
     // ------------------------------------------------------
     func loadApp() {
         
@@ -219,6 +240,12 @@ class ViewController: UIViewController {
         alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    // ------------------------------------------------------
+        // ** Animations ** //
+    
+    
+    
     
     // ------------------------------------------------------
     override func didReceiveMemoryWarning() {
