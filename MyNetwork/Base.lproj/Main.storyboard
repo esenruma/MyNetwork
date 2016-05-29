@@ -270,11 +270,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="358"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B0g-uz-8WB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D-0" translatesAutoresizingMaskIntoConstraints="NO" id="B0g-uz-8WB">
                                             <rect key="frame" x="21" y="20" width="302" height="265"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="B0g-uz-8WB" secondAttribute="height" multiplier="74:65" id="og7-eY-210"/>
+                                                <constraint firstAttribute="width" secondItem="B0g-uz-8WB" secondAttribute="height" multiplier="302:265" id="BaY-1T-MUf"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Network:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy2-qm-hm6">
@@ -288,10 +288,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVp-SD-zZo">
-                                            <rect key="frame" x="118" y="250" width="107" height="65"/>
+                                            <rect key="frame" x="118" y="277" width="107" height="38"/>
                                             <color key="backgroundColor" red="0.99607843139999996" green="0.84313725490000002" blue="0.51764705879999995" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="EtF-6t-q16"/>
+                                                <constraint firstAttribute="height" constant="38" id="EtF-6t-q16"/>
                                                 <constraint firstAttribute="width" constant="107" id="UPY-Fj-P2l"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -301,12 +301,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="fy2-qm-hm6" secondAttribute="bottom" constant="8" id="0j2-RX-MHb"/>
+                                        <constraint firstItem="B0g-uz-8WB" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="8FY-CW-Edh"/>
+                                        <constraint firstItem="B0g-uz-8WB" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="20" id="QaT-Y2-pfb"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="RwA-Ip-tHa"/>
-                                        <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="B0g-uz-8WB" secondAttribute="bottom" constant="35" id="c12-HM-P8z"/>
                                         <constraint firstItem="AVp-SD-zZo" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="cBv-hr-25N"/>
-                                        <constraint firstItem="B0g-uz-8WB" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="20" id="e7i-XQ-xiT"/>
-                                        <constraint firstItem="B0g-uz-8WB" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="oxD-OH-OyF"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="AVp-SD-zZo" secondAttribute="bottom" constant="5" id="rvF-Fd-UON"/>
+                                        <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="B0g-uz-8WB" secondAttribute="bottom" constant="35" id="s7r-cE-Lf3"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -334,15 +334,19 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="acceleratorImageView" destination="B0g-uz-8WB" id="bo9-sK-BFe"/>
                         <outlet property="blurBottom" destination="816-Cp-Cbp" id="UNi-xo-cPx"/>
                         <outlet property="blurMiddle" destination="J2g-3s-7hw" id="t4V-nR-Wcb"/>
                         <outlet property="blurTopBig" destination="uHD-cd-phD" id="B3t-2k-esN"/>
+                        <outlet property="bottomBlurBar" destination="dfE-7X-d7B" id="nUH-84-wBf"/>
                         <outlet property="fifthCatLabel" destination="ime-T8-SMw" id="8I5-Ov-MHn"/>
                         <outlet property="fifthCatNumber" destination="k5i-UN-SCn" id="lpA-3W-T4r"/>
                         <outlet property="firstCatLabel" destination="AnY-aH-lxg" id="FxF-81-jmq"/>
                         <outlet property="firstCatNumber" destination="flV-Oq-R50" id="KfI-Km-q9r"/>
                         <outlet property="fourthCatLabel" destination="Dd7-cH-frA" id="mIf-tw-pNk"/>
                         <outlet property="fourthCatNumber" destination="Quk-48-FyG" id="JJn-hH-CNd"/>
+                        <outlet property="middleBlurBar" destination="5Ph-Ks-Ec6" id="CIM-RL-Pzq"/>
+                        <outlet property="personalNetworkLabel" destination="fy2-qm-hm6" id="DXV-Ri-bgI"/>
                         <outlet property="secondCatLabel" destination="gFn-du-xqO" id="9xQ-gh-gty"/>
                         <outlet property="secondCatNumber" destination="Er7-21-ZUO" id="0T7-w1-c1e"/>
                         <outlet property="seventhCatLabel" destination="gPT-ny-VRm" id="olW-hJ-wgq"/>
@@ -351,6 +355,7 @@
                         <outlet property="sixthCatNumber" destination="HHH-Tf-q0a" id="w2c-Pm-voS"/>
                         <outlet property="thirdCatLabel" destination="xBY-18-EKV" id="6RL-yM-Rsm"/>
                         <outlet property="thirdCatNumber" destination="ZYy-PJ-Ihv" id="qoJ-db-pZ9"/>
+                        <outlet property="totalContactsLabel" destination="FzF-J6-tcD" id="cX0-f3-4Mv"/>
                         <outlet property="totalContactsNumber" destination="Rn3-lI-Zw8" id="kY0-78-lDv"/>
                         <outlet property="totalPersonalNetworkNumber" destination="AVp-SD-zZo" id="Tvf-sy-BQN"/>
                     </connections>
@@ -362,5 +367,6 @@
     </scenes>
     <resources>
         <image name="BackGround 2_MyNetwork-Q" width="200" height="350"/>
+        <image name="D-0" width="627" height="627"/>
     </resources>
 </document>

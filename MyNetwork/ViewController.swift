@@ -80,11 +80,24 @@ class ViewController: UIViewController {
     var namesFor7thCatArray = [String]()        // ================
     // ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
     
-    // Blurs to hold objects easier for AutoConstraints
+    // Blurs to hold objects easier for AutoConstraints // ** Animation **
     @IBOutlet weak var blurBottom: UIVisualEffectView!
     @IBOutlet weak var blurMiddle: UIVisualEffectView!
     @IBOutlet weak var blurTopBig: UIVisualEffectView!    
     
+    @IBOutlet weak var bottomBlurBar: UIImageView!
+    @IBOutlet weak var middleBlurBar: UIImageView!
+    
+    @IBOutlet weak var totalContactsLabel: UILabel!
+    
+    @IBOutlet weak var acceleratorImageView: UIImageView!
+    
+    @IBOutlet weak var personalNetworkLabel: UILabel!
+    
+    // ** Dial Animation **
+    var timer = NSTimer()
+    var isAnimating = false
+    var counter = 0
     
     // ------------------------------------------------------
     override func viewDidLoad() {
@@ -104,6 +117,8 @@ class ViewController: UIViewController {
         default:
             print("Not handled")
         } // End Switch for 'Privacy Check'
+        
+        
         
         
         
@@ -242,8 +257,174 @@ class ViewController: UIViewController {
     }
     
     // ------------------------------------------------------
-        // ** Animations ** //
+                    // ** Animations ** //
+    override func viewDidLayoutSubviews() {
+        
+        // ** 1st ** -------------------------------------------------------
+        self.blurBottom.center = CGPointMake(self.blurBottom.center.x, self.blurBottom.center.y + 800)
+        
+        self.bottomBlurBar.alpha = 0.0
+        
+         self.totalContactsLabel.alpha = 0.0
+        
+         self.totalContactsNumber.alpha = 0.0
+
+        
+        // ** 2nd ** -------------------------------------------------------
+        self.blurMiddle.center = CGPointMake(self.blurMiddle.center.x, self.blurMiddle.center.y + 400)
+        
+        self.middleBlurBar.alpha = 0.0
+        
+        self.firstCatLabel.alpha = 0.0
+        self.secondCatLabel.alpha = 0.0
+        self.thirdCatLabel.alpha = 0.0
+        self.fourthCatLabel.alpha = 0.0
+        self.fifthCatLabel.alpha = 0.0
+        self.sixthCatLabel.alpha = 0.0
+        self.seventhCatLabel.alpha = 0.0
+        
+        self.firstCatNumber.alpha = 0.0
+        self.secondCatNumber.alpha = 0.0
+        self.thirdCatNumber.alpha = 0.0
+        self.fourthCatNumber.alpha = 0.0
+        self.fifthCatNumber.alpha = 0.0
+        self.sixthCatNumber.alpha = 0.0
+        self.seventhCatNumber.alpha = 0.0
+        
+        
+        // ** 3rd ** -------------------------------------------------------
+        self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y + 800)
+        
+        self.personalNetworkLabel.alpha = 0.0
+        self.totalPersonalNetworkNumber.alpha = 0.0
+        self.acceleratorImageView.alpha = 0.0
+        
+        // self.imageView.frame = CGRectMake(187, 249, 0, 0)
+        
+        // self.imageView.frame = CGRectMake(16, 70, 343, 358)
+    }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // ** 1st ** -------------------------------------------------------
+        UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+            
+            self.blurBottom.center = CGPointMake(self.blurBottom.center.x, self.blurBottom.center.y - 800)
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 0.5, options: [], animations: {
+            
+            self.bottomBlurBar.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+            
+            self.totalContactsLabel.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+            
+            self.totalContactsNumber.alpha = 1.0
+            
+            }, completion: nil)
+        
+        
+        // ** 2nd ** -------------------------------------------------------
+        UIView.animateWithDuration(1.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+            
+            self.blurMiddle.center = CGPointMake(self.blurMiddle.center.x, self.blurMiddle.center.y - 400)
+            
+            }, completion: nil)
+
+        UIView.animateWithDuration(1.0, delay: 2.5, options: [], animations: {
+            
+            self.middleBlurBar.alpha = 1.0
+            
+            }, completion: nil)
+        
+        
+        UIView.animateWithDuration(1.0, delay: 3.0, options: [], animations: {
+            // Animate All Names of Categories
+            
+            self.firstCatLabel.alpha = 1.0
+            self.secondCatLabel.alpha = 1.0
+            self.thirdCatLabel.alpha = 1.0
+            self.fourthCatLabel.alpha = 1.0
+            self.fifthCatLabel.alpha = 1.0
+            self.sixthCatLabel.alpha = 1.0
+            self.seventhCatLabel.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 3.0, options: [], animations: {
+            // Animate All Category Numbers
+            
+            self.firstCatNumber.alpha = 1.0
+            self.secondCatNumber.alpha = 1.0
+            self.thirdCatNumber.alpha = 1.0
+            self.fourthCatNumber.alpha = 1.0
+            self.fifthCatNumber.alpha = 1.0
+            self.sixthCatNumber.alpha = 1.0
+            self.seventhCatNumber.alpha = 1.0
+            
+            }, completion: nil)
+        
+        
+        // ** 3rd **
+        UIView.animateWithDuration(1.0, delay: 3.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+            
+            self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y - 800)
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 4.0, options: [], animations: {
+            // xx
+            self.personalNetworkLabel.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 4.2, options: [], animations: {
+            // xx
+            self.totalPersonalNetworkNumber.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 4.8, options: [], animations: {
+            // xx
+            self.acceleratorImageView.alpha = 1.0
+            
+            }, completion: nil)
+        
+        
+        // ** Dial Animation Start **
+        NSTimer.scheduledTimerWithTimeInterval(5.5, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
+
+    }
+    
+    func startDialAnimation() {
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
+    }
+    
+    func doAnimationDial() {
+        if counter == 150 {         // Max counter no. = "sizeOfPersonalNetwork" ** TO-DO **
+            timer.invalidate()      // Stop Dial movement
+            
+        } else {
+            counter += 1
+        }
+        self.acceleratorImageView.image = UIImage(named: "D-\(counter)")
+    }
+    
+    
+    
+    // ======================================================
+    //  2016-05-28 20:20:40.870 MyNetwork[1856:956091] Received memory warning.
+    // ======================================================
     
     
     
