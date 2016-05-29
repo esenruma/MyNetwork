@@ -95,9 +95,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var personalNetworkLabel: UILabel!
     
     // ** Dial Animation **
-    var timer = NSTimer()
+    var timerForDialOMeter = NSTimer()
     var isAnimating = false
-    var counter = 0
+    var counterForDialOMeter = 0
+    
+    @IBOutlet weak var myViewHeight: NSLayoutConstraint!    // Constraint Animation Solution
+    @IBOutlet weak var myViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var myViewLeading: NSLayoutConstraint!
+    
+    // ** Network Number Counter Animation **
+    var timerForNetworkCount = NSTimer()
+    var counterForNetwork = 0
+    var personalNetworkSize = Int()
+    
     
     // ------------------------------------------------------
     override func viewDidLoad() {
@@ -218,7 +228,14 @@ class ViewController: UIViewController {
                 // ** Calculation + Show in Labels **
                 let sizeOfPersonalNetwork = self.counterForPrefixCode1 + self.counterForPrefixCode2 + self.counterForPrefixCode3 + self.counterForPrefixCode4 + self.counterForPrefixCode5 + self.counterForPrefixCode6 + self.counterForPrefixCode7
                 
-                self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
+                
+                // Not show No. until end of Screen animation as part of Counter - See End 'ViewDidAppear'
+                // self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
+                
+                
+                // update Var holding size of Personal Network
+                self.personalNetworkSize = sizeOfPersonalNetwork
+                // -----------------------------------------------
                 
                 self.firstCatNumber.text = String(self.counterForPrefixCode1)
                 self.secondCatNumber.text = String(self.counterForPrefixCode2)
@@ -299,16 +316,18 @@ class ViewController: UIViewController {
         self.totalPersonalNetworkNumber.alpha = 0.0
         self.acceleratorImageView.alpha = 0.0
         
-        // self.imageView.frame = CGRectMake(187, 249, 0, 0)
+        self.myViewHeight.constant = 150
+        self.myViewTrailing.constant = 100
         
-        // self.imageView.frame = CGRectMake(16, 70, 343, 358)
+        self.myViewLeading.constant = 100
+        
     }
     
     
     override func viewDidAppear(animated: Bool) {
         
         // ** 1st ** -------------------------------------------------------
-        UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
             
             self.blurBottom.center = CGPointMake(self.blurBottom.center.x, self.blurBottom.center.y - 800)
             
@@ -376,54 +395,79 @@ class ViewController: UIViewController {
         
         // ** 3rd **
         UIView.animateWithDuration(1.0, delay: 3.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
-            
+            // BLUR-TOP
             self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y - 800)
             
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 4.0, options: [], animations: {
-            // xx
+            // TEXT-LABEL
             self.personalNetworkLabel.alpha = 1.0
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 4.2, options: [], animations: {
-            // xx
+        UIView.animateWithDuration(2.0, delay: 4.2, options: [], animations: {
+            // NUMBER-COUNTER
             self.totalPersonalNetworkNumber.alpha = 1.0
             
             }, completion: nil)
+
         
-        UIView.animateWithDuration(1.0, delay: 4.8, options: [], animations: {
-            // xx
-            self.acceleratorImageView.alpha = 1.0
+        UIView.animateWithDuration(1.0, delay: 4.8, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [], animations: {
+            // DIAL-O-METER
+                self.acceleratorImageView.alpha = 1.0
+            
+                self.myViewHeight.constant = 20
+                self.myViewTrailing.constant = 20
+            
+                self.myViewLeading.constant = 20
+                self.view.layoutIfNeeded()
             
             }, completion: nil)
         
         
         // ** Dial Animation Start **
-        NSTimer.scheduledTimerWithTimeInterval(5.5, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
+        
+        // ** Number Counter Show on 'totalPersonalNetworkNumber' label **
+//        NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(ViewController.startNetworkCounterSize), userInfo: nil, repeats: false)
 
     }
     
+//    func startNetworkCounterSize() {
+//        
+//        timerForNetworkCount = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewController.countAnimation), userInfo: nil, repeats: true)
+//    }
+    
+//    func countAnimation() {
+//        if counterForNetwork == self.personalNetworkSize {
+//            timerForNetworkCount.invalidate()
+//        } else {
+//            counterForNetwork += 1
+//        }
+//        self.totalPersonalNetworkNumber.text = "\(counterForNetwork)"
+//    }
+    
     func startDialAnimation() {
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
+        timerForDialOMeter = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
     }
     
     func doAnimationDial() {
-        if counter == 150 {         // Max counter no. = "sizeOfPersonalNetwork" ** TO-DO **
-            timer.invalidate()      // Stop Dial movement
+        if counterForDialOMeter == 150 {         // Max counter no. = "sizeOfPersonalNetwork" ** TO-DO **
+            timerForDialOMeter.invalidate()      // Stop Dial movement
             
         } else {
-            counter += 1
+            counterForDialOMeter += 1
         }
-        self.acceleratorImageView.image = UIImage(named: "D-\(counter)")
+        self.acceleratorImageView.image = UIImage(named: "D-\(counterForDialOMeter)")
     }
     
     
     
     // ======================================================
     //  2016-05-28 20:20:40.870 MyNetwork[1856:956091] Received memory warning.
+    //  2016-05-29 11:36:12.778 MyNetwork[2048:1030558] Received memory warning.
     // ======================================================
     
     
