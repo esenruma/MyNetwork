@@ -33,6 +33,16 @@ let dCatCode6 = "in."
 let dCat7 = "Personal Advisor"      // ad.
 let dCatCode7 = "ad."
 
+// Stored names-Arrays of results of network Count per Category
+var namesFor1stCatArray = [String]()        // ================
+var namesFor2ndCatArray = [String]()        // ================
+var namesFor3rdCatArray = [String]()        // ================
+var namesFor4thCatArray = [String]()        // ================
+var namesFor5thCatArray = [String]()        // ================
+var namesFor6thCatArray = [String]()        // ================
+var namesFor7thCatArray = [String]()        // ================
+// ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
+
 
 // -----------------------------------------------------
 class ViewController: UIViewController {
@@ -70,16 +80,6 @@ class ViewController: UIViewController {
     var counterForPrefixCode6 = Int()
     var counterForPrefixCode7 = Int()
     
-    // Stored names-Arrays of results of network Count per Category
-    var namesFor1stCatArray = [String]()        // ================
-    var namesFor2ndCatArray = [String]()        // ================
-    var namesFor3rdCatArray = [String]()        // ================
-    var namesFor4thCatArray = [String]()        // ================
-    var namesFor5thCatArray = [String]()        // ================
-    var namesFor6thCatArray = [String]()        // ================
-    var namesFor7thCatArray = [String]()        // ================
-    // ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
-    
     // Blurs to hold objects easier for AutoConstraints // ** Animation **
     @IBOutlet weak var blurBottom: UIVisualEffectView!
     @IBOutlet weak var blurMiddle: UIVisualEffectView!
@@ -94,6 +94,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var personalNetworkLabel: UILabel!
     
+    @IBOutlet weak var spinnerImageView: UIImageView!
+    
+    @IBOutlet weak var SpinnerImageForeground: UIImageView!
+    
+    @IBOutlet weak var orangeImageView: UIImageView!
+    
+    
     // ** Dial Animation **
     var timerForDialOMeter = NSTimer()
     var isAnimating = false
@@ -105,10 +112,18 @@ class ViewController: UIViewController {
     
     // ** Network Number Counter Animation **
     var timerForNetworkCount = NSTimer()
-    var counterForNetwork = 0
     var personalNetworkSize = Int()
+    var counterForNetwork = 0
     
+    var spinnerBool = true          /// ?????
     
+    // Button to Details of Names per Category on a Different VC
+    @IBAction func getNamesButton(sender: AnyObject) {
+        
+        performSegueWithIdentifier("home2Names", sender: nil)
+    }
+    
+
     // ------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,10 +142,6 @@ class ViewController: UIViewController {
         default:
             print("Not handled")
         } // End Switch for 'Privacy Check'
-        
-        
-        
-        
         
     } // End FUNC
     
@@ -178,43 +189,43 @@ class ViewController: UIViewController {
                             counterForPrefixCode1 += 1
                             
                             // Add name to Array
-                            self.namesFor1stCatArray.append(result.givenName)
+                            namesFor1stCatArray.append(result.givenName)
                             
                         case dCatCode2:
                             print(result.givenName)
                             counterForPrefixCode2 += 1
                             
-                            self.namesFor2ndCatArray.append(result.givenName)
+                            namesFor2ndCatArray.append(result.givenName)
                             
                         case dCatCode3:
                             print(result.givenName)
                             counterForPrefixCode3 += 1
                             
-                            self.namesFor3rdCatArray.append(result.givenName)
+                            namesFor3rdCatArray.append(result.givenName)
                             
                         case dCatCode4:
                             print(result.givenName)
                             counterForPrefixCode4 += 1
                             
-                            self.namesFor4thCatArray.append(result.givenName)
+                            namesFor4thCatArray.append(result.givenName)
                             
                         case dCatCode5:
                             print(result.givenName)
                             counterForPrefixCode5 += 1
                             
-                            self.namesFor5thCatArray.append(result.givenName)
+                            namesFor5thCatArray.append(result.givenName)
                             
                         case dCatCode6:
                             print(result.givenName)
                             counterForPrefixCode6 += 1
                             
-                            self.namesFor6thCatArray.append(result.givenName)
+                            namesFor6thCatArray.append(result.givenName)
                             
                         case dCatCode7:
                             print(result.givenName)
                             counterForPrefixCode7 += 1
                             
-                            self.namesFor7thCatArray.append(result.givenName)
+                            namesFor7thCatArray.append(result.givenName)
                             
                         default: break
                             // Do Nothing
@@ -229,13 +240,17 @@ class ViewController: UIViewController {
                 let sizeOfPersonalNetwork = self.counterForPrefixCode1 + self.counterForPrefixCode2 + self.counterForPrefixCode3 + self.counterForPrefixCode4 + self.counterForPrefixCode5 + self.counterForPrefixCode6 + self.counterForPrefixCode7
                 
                 
-                // Not show No. until end of Screen animation as part of Counter - See End 'ViewDidAppear'
-                // self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
+                // ==============
+                self.totalPersonalNetworkNumber.text = String(sizeOfPersonalNetwork)
+                
                 
                 
                 // update Var holding size of Personal Network
                 self.personalNetworkSize = sizeOfPersonalNetwork
+                print(self.personalNetworkSize)
                 // -----------------------------------------------
+                
+                
                 
                 self.firstCatNumber.text = String(self.counterForPrefixCode1)
                 self.secondCatNumber.text = String(self.counterForPrefixCode2)
@@ -313,8 +328,14 @@ class ViewController: UIViewController {
         self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y + 800)
         
         self.personalNetworkLabel.alpha = 0.0
+        self.spinnerImageView.alpha = 0.0
+        self.SpinnerImageForeground.alpha = 0.0
         self.totalPersonalNetworkNumber.alpha = 0.0
         self.acceleratorImageView.alpha = 0.0
+        
+        self.orangeImageView.alpha = 0.0
+        // self.orangeImageView.center = CGPointMake(self.orangeImageView.center.x, self.orangeImageView.center.y - 800)
+        
         
         self.myViewHeight.constant = 150
         self.myViewTrailing.constant = 100
@@ -396,19 +417,24 @@ class ViewController: UIViewController {
         // ** 3rd **
         UIView.animateWithDuration(1.0, delay: 3.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
             // BLUR-TOP
+            
             self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y - 800)
             
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 4.0, options: [], animations: {
             // TEXT-LABEL
+            
             self.personalNetworkLabel.alpha = 1.0
             
             }, completion: nil)
         
         UIView.animateWithDuration(2.0, delay: 4.2, options: [], animations: {
-            // NUMBER-COUNTER
+            // NUMBER-COUNTER + Spinner image (BASIC)
+            
             self.totalPersonalNetworkNumber.alpha = 1.0
+            self.spinnerImageView.alpha = 1.0
+            self.SpinnerImageForeground.alpha = 1.0
             
             }, completion: nil)
 
@@ -428,48 +454,59 @@ class ViewController: UIViewController {
         
         // ** Dial Animation Start **
         NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
-        
-        // ** Number Counter Show on 'totalPersonalNetworkNumber' label **
-//        NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(ViewController.startNetworkCounterSize), userInfo: nil, repeats: false)
 
-    }
+        
+        // *** ROTATION ***
+        UIView.animateWithDuration(3.0, delay: 7.5, options: [.CurveLinear], animations: {
+            
+            // Nested FUNC for spinning - options: [.CurveLinear] in Animation Block
+            func spinnerRotate() {
+                self.spinnerImageView.transform = CGAffineTransformRotate(self.spinnerImageView.transform, CGFloat(M_PI))   // (M_PI_2) = 90 degrees, (M_PI) = 180 degrees
+            }
+                spinnerRotate()     // x3 full circles with x6 Funcs called !!!
+                spinnerRotate()
+                spinnerRotate()
+                spinnerRotate()
+                spinnerRotate()
+                spinnerRotate()
+            
+            }, completion: nil)
+        
+        
+        
+        // FINALE!! - 3D image behind Tot.No. of Personal Contacts
+        // UIView.animateWithDuration(1.0, delay: 15.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [], animations: {
+        UIView.animateWithDuration(2.0, delay: 10.0, options: [], animations: {
+            
+            self.orangeImageView.alpha = 1.0
+            // self.orangeImageView.center = CGPointMake(self.orangeImageView.center.x, self.orangeImageView.center.y + 800)
+            
+            }, completion: nil)
+        
+
+        
+    } // End ViewDidAppear FUNC
     
-//    func startNetworkCounterSize() {
-//        
-//        timerForNetworkCount = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ViewController.countAnimation), userInfo: nil, repeats: true)
-//    }
-    
-//    func countAnimation() {
-//        if counterForNetwork == self.personalNetworkSize {
-//            timerForNetworkCount.invalidate()
-//        } else {
-//            counterForNetwork += 1
-//        }
-//        self.totalPersonalNetworkNumber.text = "\(counterForNetwork)"
-//    }
     
     func startDialAnimation() {
         
-        timerForDialOMeter = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
+        timerForDialOMeter = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
     }
     
     func doAnimationDial() {
-        if counterForDialOMeter == 150 {         // Max counter no. = "sizeOfPersonalNetwork" ** TO-DO **
-            timerForDialOMeter.invalidate()      // Stop Dial movement
+        // ** Both Dial + Counter Animation **
+        
+        if counterForDialOMeter == self.personalNetworkSize { // Max counter no.
+            
+            timerForDialOMeter.invalidate()     // Stop Dial movement
+            // Start Spinner Movement - CALL!!!!
             
         } else {
-            counterForDialOMeter += 1
+            
+            self.counterForDialOMeter += 1
         }
         self.acceleratorImageView.image = UIImage(named: "D-\(counterForDialOMeter)")
     }
-    
-    
-    
-    // ======================================================
-    //  2016-05-28 20:20:40.870 MyNetwork[1856:956091] Received memory warning.
-    //  2016-05-29 11:36:12.778 MyNetwork[2048:1030558] Received memory warning.
-    // ======================================================
-    
     
     
     // ------------------------------------------------------
