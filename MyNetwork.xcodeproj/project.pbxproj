@@ -14,6 +14,13 @@
 		E05E28E71CF5D83900B5AF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E05E28E61CF5D83900B5AF8D /* Assets.xcassets */; };
 		E05E28EA1CF5D83900B5AF8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05E28E81CF5D83900B5AF8D /* LaunchScreen.storyboard */; };
 		E0C27AFC1CFC84C4006E0780 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C27AFB1CFC84C4006E0780 /* NamesViewController.swift */; };
+		E0D79A6A1CFCB0D4008C9835 /* FriendsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A691CFCB0D4008C9835 /* FriendsCustomCell.swift */; };
+		E0D79A6C1CFCB0F0008C9835 /* FamilyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A6B1CFCB0F0008C9835 /* FamilyCustomCell.swift */; };
+		E0D79A6E1CFCB10B008C9835 /* WorkCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A6D1CFCB10B008C9835 /* WorkCustomCell.swift */; };
+		E0D79A701CFCB121008C9835 /* AlumniCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A6F1CFCB121008C9835 /* AlumniCustomCell.swift */; };
+		E0D79A721CFCB132008C9835 /* SocialCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A711CFCB132008C9835 /* SocialCustomCell.swift */; };
+		E0D79A741CFCB14F008C9835 /* InnerCircleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A731CFCB14F008C9835 /* InnerCircleCustomCell.swift */; };
+		E0D79A761CFCB162008C9835 /* PersonalAdvisorCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A751CFCB162008C9835 /* PersonalAdvisorCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		E05E28E91CF5D83900B5AF8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E05E28EB1CF5D83900B5AF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0C27AFB1CFC84C4006E0780 /* NamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
+		E0D79A691CFCB0D4008C9835 /* FriendsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A6B1CFCB0F0008C9835 /* FamilyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A6D1CFCB10B008C9835 /* WorkCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A6F1CFCB121008C9835 /* AlumniCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumniCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A711CFCB132008C9835 /* SocialCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A731CFCB14F008C9835 /* InnerCircleCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerCircleCustomCell.swift; sourceTree = "<group>"; };
+		E0D79A751CFCB162008C9835 /* PersonalAdvisorCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAdvisorCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,13 @@
 				E05E28DC1CF5D83900B5AF8D /* AppDelegate.swift */,
 				E05E28DE1CF5D83900B5AF8D /* ViewController.swift */,
 				E0C27AFB1CFC84C4006E0780 /* NamesViewController.swift */,
+				E0D79A691CFCB0D4008C9835 /* FriendsCustomCell.swift */,
+				E0D79A6B1CFCB0F0008C9835 /* FamilyCustomCell.swift */,
+				E0D79A6D1CFCB10B008C9835 /* WorkCustomCell.swift */,
+				E0D79A6F1CFCB121008C9835 /* AlumniCustomCell.swift */,
+				E0D79A711CFCB132008C9835 /* SocialCustomCell.swift */,
+				E0D79A731CFCB14F008C9835 /* InnerCircleCustomCell.swift */,
+				E0D79A751CFCB162008C9835 /* PersonalAdvisorCustomCell.swift */,
 				E05E28E01CF5D83900B5AF8D /* Main.storyboard */,
 				E05E28E61CF5D83900B5AF8D /* Assets.xcassets */,
 				E05E28E81CF5D83900B5AF8D /* LaunchScreen.storyboard */,
@@ -141,9 +162,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D79A6E1CFCB10B008C9835 /* WorkCustomCell.swift in Sources */,
+				E0D79A6C1CFCB0F0008C9835 /* FamilyCustomCell.swift in Sources */,
+				E0D79A701CFCB121008C9835 /* AlumniCustomCell.swift in Sources */,
+				E0D79A741CFCB14F008C9835 /* InnerCircleCustomCell.swift in Sources */,
+				E0D79A6A1CFCB0D4008C9835 /* FriendsCustomCell.swift in Sources */,
 				E05E28DF1CF5D83900B5AF8D /* ViewController.swift in Sources */,
 				E05E28E51CF5D83900B5AF8D /* MyNetwork.xcdatamodeld in Sources */,
 				E05E28DD1CF5D83900B5AF8D /* AppDelegate.swift in Sources */,
+				E0D79A721CFCB132008C9835 /* SocialCustomCell.swift in Sources */,
+				E0D79A761CFCB162008C9835 /* PersonalAdvisorCustomCell.swift in Sources */,
 				E0C27AFC1CFC84C4006E0780 /* NamesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
