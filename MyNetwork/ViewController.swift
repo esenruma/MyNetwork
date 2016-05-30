@@ -356,19 +356,19 @@ class ViewController: UIViewController {
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 0.5, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.2, options: [], animations: {
             
             self.bottomBlurBar.alpha = 1.0
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.5, options: [], animations: {
             
             self.totalContactsLabel.alpha = 1.0
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.5, options: [], animations: {
             
             self.totalContactsNumber.alpha = 1.0
             
@@ -376,20 +376,20 @@ class ViewController: UIViewController {
         
         
         // ** 2nd ** -------------------------------------------------------
-        UIView.animateWithDuration(1.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
             
             self.blurMiddle.center = CGPointMake(self.blurMiddle.center.x, self.blurMiddle.center.y - 400)
             
             }, completion: nil)
 
-        UIView.animateWithDuration(1.0, delay: 2.5, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.6, options: [], animations: {
             
             self.middleBlurBar.alpha = 1.0
             
             }, completion: nil)
         
         
-        UIView.animateWithDuration(1.0, delay: 3.0, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.7, options: [], animations: {
             // Animate All Names of Categories
             
             self.firstCatLabel.alpha = 1.0
@@ -402,7 +402,7 @@ class ViewController: UIViewController {
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 3.0, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.8, options: [], animations: {
             // Animate All Category Numbers
             
             self.firstCatNumber.alpha = 1.0
@@ -417,21 +417,21 @@ class ViewController: UIViewController {
         
         
         // ** 3rd **
-        UIView.animateWithDuration(1.0, delay: 3.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 0.9, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
             // BLUR-TOP
             
             self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y - 800)
             
             }, completion: nil)
         
-        UIView.animateWithDuration(1.0, delay: 4.0, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
             // TEXT-LABEL
             
             self.personalNetworkLabel.alpha = 1.0
             
             }, completion: nil)
         
-        UIView.animateWithDuration(2.0, delay: 4.2, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 1.2, options: [], animations: {
             // NUMBER-COUNTER + Spinner image (BASIC)
             
             self.totalPersonalNetworkNumber.alpha = 1.0
@@ -441,7 +441,7 @@ class ViewController: UIViewController {
             }, completion: nil)
 
         
-        UIView.animateWithDuration(1.0, delay: 4.8, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [], animations: {
+        UIView.animateWithDuration(1.0, delay: 1.4, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [], animations: {
             // DIAL-O-METER
                 self.acceleratorImageView.alpha = 1.0
             
@@ -455,11 +455,11 @@ class ViewController: UIViewController {
         
         
         // ** Dial Animation Start **
-        NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
 
         
         // *** ROTATION ***
-        UIView.animateWithDuration(3.0, delay: 7.5, options: [.CurveLinear], animations: {
+        UIView.animateWithDuration(3.0, delay: 2.0, options: [.CurveLinear], animations: {
             
             // Nested FUNC for spinning - options: [.CurveLinear] in Animation Block
             func spinnerRotate() {
@@ -478,21 +478,20 @@ class ViewController: UIViewController {
         
         // FINALE!! - 3D image behind Tot.No. of Personal Contacts
         // UIView.animateWithDuration(1.0, delay: 15.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [], animations: {
-        UIView.animateWithDuration(2.0, delay: 10.0, options: [], animations: {
+        UIView.animateWithDuration(2.5, delay: 2.5, options: [], animations: {
             
             self.orangeImageView.alpha = 1.0
             // self.orangeImageView.center = CGPointMake(self.orangeImageView.center.x, self.orangeImageView.center.y + 800)
             
             }, completion: nil)
         
-
         
     } // End ViewDidAppear FUNC
     
     
     func startDialAnimation() {
         
-        timerForDialOMeter = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
+        timerForDialOMeter = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(ViewController.doAnimationDial), userInfo: nil, repeats: true)
     }
     
     func doAnimationDial() {
