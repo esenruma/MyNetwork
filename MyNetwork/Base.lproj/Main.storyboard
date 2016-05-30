@@ -226,7 +226,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-AF-hYd">
                                             <rect key="frame" x="8" y="8" width="327" height="149"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title=" "/>
                                             <connections>
                                                 <action selector="getNamesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xrn-cq-Sao"/>
                                             </connections>
@@ -399,17 +399,17 @@
                         <outlet property="totalContactsLabel" destination="FzF-J6-tcD" id="cX0-f3-4Mv"/>
                         <outlet property="totalContactsNumber" destination="Rn3-lI-Zw8" id="kY0-78-lDv"/>
                         <outlet property="totalPersonalNetworkNumber" destination="AVp-SD-zZo" id="Tvf-sy-BQN"/>
-                        <segue destination="eI6-uY-T8O" kind="presentation" identifier="home2Names" id="JST-y7-ahg"/>
+                        <segue destination="eI6-uY-T8O" kind="presentation" identifier="home2Names" modalTransitionStyle="flipHorizontal" id="JST-y7-ahg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="227.5" y="428.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Names View Controller-->
         <scene sceneID="Rb4-Ms-pI0">
             <objects>
-                <viewController id="eI6-uY-T8O" sceneMemberID="viewController">
+                <viewController id="eI6-uY-T8O" customClass="NamesViewController" customModule="MyNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xrn-BI-Dai"/>
                         <viewControllerLayoutGuide type="bottom" id="G3j-ga-u7U"/>
@@ -421,16 +421,32 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround 2_MyNetwork-Q" translatesAutoresizingMaskIntoConstraints="NO" id="92M-vb-yRh">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeH-Vf-xPj">
+                                <rect key="frame" x="143" y="20" width="89" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="89" id="Kok-cQ-1hh"/>
+                                    <constraint firstAttribute="height" constant="57" id="M8i-NX-rnR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButton:" destination="eI6-uY-T8O" eventType="touchUpInside" id="Mbw-Lp-Tad"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="92M-vb-yRh" secondAttribute="trailing" constant="-20" id="M5I-83-aGA"/>
                             <constraint firstItem="G3j-ga-u7U" firstAttribute="top" secondItem="92M-vb-yRh" secondAttribute="bottom" id="VlZ-dh-JPr"/>
                             <constraint firstItem="92M-vb-yRh" firstAttribute="leading" secondItem="6yE-rd-Wom" secondAttribute="leadingMargin" constant="-20" id="Zpg-P9-LLE"/>
+                            <constraint firstItem="qeH-Vf-xPj" firstAttribute="top" secondItem="xrn-BI-Dai" secondAttribute="bottom" id="dUv-xf-YnX"/>
+                            <constraint firstItem="qeH-Vf-xPj" firstAttribute="centerX" secondItem="6yE-rd-Wom" secondAttribute="centerX" id="dnd-wV-UWm"/>
                             <constraint firstItem="92M-vb-yRh" firstAttribute="top" secondItem="6yE-rd-Wom" secondAttribute="topMargin" id="usj-wI-Z58"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="names2Home" modalTransitionStyle="coverVertical" id="hFp-2v-0Gc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmK-xF-mLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

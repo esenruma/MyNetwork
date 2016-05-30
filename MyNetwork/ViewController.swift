@@ -121,6 +121,8 @@ class ViewController: UIViewController {
     @IBAction func getNamesButton(sender: AnyObject) {
         
         performSegueWithIdentifier("home2Names", sender: nil)
+        
+        // nb: "Flip-Horizontal" VC transition setup - Looks good + Not interfer with 1st VC animation
     }
     
 
