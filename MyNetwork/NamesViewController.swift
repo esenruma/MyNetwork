@@ -28,9 +28,51 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var collectionPersonalAdvisor: UICollectionView!
  
     
+    @IBOutlet var backButtonLink: UIButton!
+    
+    
 // -----------------------------------------------------------
-    override func viewDidLayoutSubviews() {
+//    override func viewDidLayoutSubviews() {
+//        
+//        self.blur1.center = CGPointMake(self.blur1.center.x - 400, self.blur1.center.y)
+//        self.blur2.center = CGPointMake(self.blur2.center.x - 400, self.blur2.center.y)
+//        self.blur3.center = CGPointMake(self.blur3.center.x - 400, self.blur3.center.y)
+//        self.blur4.center = CGPointMake(self.blur4.center.x - 400, self.blur4.center.y)
+//        self.blur5.center = CGPointMake(self.blur5.center.x - 400, self.blur5.center.y)
+//        self.blur6.center = CGPointMake(self.blur6.center.x - 400, self.blur6.center.y)
+//        self.blur7.center = CGPointMake(self.blur7.center.x - 400, self.blur7.center.y)
+//        
+//        self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x - 400, self.backButtonLink.center.y)
+//    }
+    
+    override func viewWillAppear(animated: Bool) {
         
+        self.backButtonLink.alpha = 0.0
+        self.blur1.alpha = 0.0
+        self.blur2.alpha = 0.0
+        self.blur3.alpha = 0.0
+        self.blur4.alpha = 0.0
+        self.blur5.alpha = 0.0
+        self.blur6.alpha = 0.0
+        self.blur7.alpha = 0.0
+    }
+    
+// -----------------------------------------------------------
+    override func viewDidAppear(animated: Bool) {
+        
+        self.backButtonLink.alpha = 1.0
+        self.blur1.alpha = 1.0
+        self.blur2.alpha = 1.0
+        self.blur3.alpha = 1.0
+        self.blur4.alpha = 1.0
+        self.blur5.alpha = 1.0
+        self.blur6.alpha = 1.0
+        self.blur7.alpha = 1.0
+        
+        //  XCode Message:
+        //  2016-05-31 11:32:36.510 MyNetwork[1827:231455] <UIVisualEffectView 0x7ff0116b4270> is being asked to animate its opacity. This will cause the effect to appear broken until opacity returns to 1.
+        
+        // Animation Start = Here vs. 'ViewDidLayoutSubViews'
         self.blur1.center = CGPointMake(self.blur1.center.x - 400, self.blur1.center.y)
         self.blur2.center = CGPointMake(self.blur2.center.x - 400, self.blur2.center.y)
         self.blur3.center = CGPointMake(self.blur3.center.x - 400, self.blur3.center.y)
@@ -38,10 +80,11 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.blur5.center = CGPointMake(self.blur5.center.x - 400, self.blur5.center.y)
         self.blur6.center = CGPointMake(self.blur6.center.x - 400, self.blur6.center.y)
         self.blur7.center = CGPointMake(self.blur7.center.x - 400, self.blur7.center.y)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         
+        self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x - 400, self.backButtonLink.center.y)
+        
+        
+        // ---------------------------------
         UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
             self.blur1.center = CGPointMake(self.blur1.center.x + 400, self.blur1.center.y)
             }, completion: nil)
@@ -68,6 +111,10 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         UIView.animateWithDuration(1.0, delay: 0.7, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
             self.blur7.center = CGPointMake(self.blur7.center.x + 400, self.blur7.center.y)
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.0, delay: 0.8, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
+            self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x + 400, self.backButtonLink.center.y)
             }, completion: nil)
         
     }
@@ -171,6 +218,17 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
 // -----------------------------------------------------------
     @IBAction func backButton(sender: AnyObject) {
         
+        // Stored names-Arrays of results of network Count per Category
+        // Remove All Data in them to stop Duplication of contact names showing up
+        namesFor1stCatArray.removeAll()
+        namesFor2ndCatArray.removeAll()
+        namesFor3rdCatArray.removeAll()
+        namesFor4thCatArray.removeAll()
+        namesFor5thCatArray.removeAll()
+        namesFor6thCatArray.removeAll()
+        namesFor7thCatArray.removeAll()
+        
+        // Go Back to 1st VC
         performSegueWithIdentifier("names2Home", sender: nil)
         
         // dismissViewControllerAnimated(true, completion: nil) // NOT WORK WITH 1st VC Animation!!!!
@@ -182,7 +240,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+
     }
 
     override func didReceiveMemoryWarning() {

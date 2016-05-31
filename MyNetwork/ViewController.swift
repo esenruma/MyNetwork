@@ -34,14 +34,13 @@ let dCat7 = "Personal Advisor"      // ad.
 let dCatCode7 = "ad."
 
 // Stored names-Arrays of results of network Count per Category
-var namesFor1stCatArray = [String]()        // ================
-var namesFor2ndCatArray = [String]()        // ================
-var namesFor3rdCatArray = [String]()        // ================
-var namesFor4thCatArray = [String]()        // ================
-var namesFor5thCatArray = [String]()        // ================
-var namesFor6thCatArray = [String]()        // ================
-var namesFor7thCatArray = [String]()        // ================
-// ==== What to do with these Stored Names? - into 3rd VC - Table??? ====
+var namesFor1stCatArray = [String]()
+var namesFor2ndCatArray = [String]()
+var namesFor3rdCatArray = [String]()
+var namesFor4thCatArray = [String]()
+var namesFor5thCatArray = [String]()
+var namesFor6thCatArray = [String]()
+var namesFor7thCatArray = [String]()
 
 
 // -----------------------------------------------------
@@ -291,20 +290,18 @@ class ViewController: UIViewController {
     }
     
     // ------------------------------------------------------
-                    // ** Animations ** //
-    override func viewDidLayoutSubviews() {
+    // ** Animations ** //
+    override func viewDidAppear(animated: Bool) {
         
-        // ** 1st ** -------------------------------------------------------
+        // ** Placed here vs."viewDidLayoutSubviews" **
+        // ------Start Animation Sequence-------
+        // ** 1st **
         self.blurBottom.center = CGPointMake(self.blurBottom.center.x, self.blurBottom.center.y + 800)
-        
         self.bottomBlurBar.alpha = 0.0
+        self.totalContactsLabel.alpha = 0.0
+        self.totalContactsNumber.alpha = 0.0
         
-         self.totalContactsLabel.alpha = 0.0
-        
-         self.totalContactsNumber.alpha = 0.0
-
-        
-        // ** 2nd ** -------------------------------------------------------
+        // ** 2nd **
         self.blurMiddle.center = CGPointMake(self.blurMiddle.center.x, self.blurMiddle.center.y + 400)
         
         self.middleBlurBar.alpha = 0.0
@@ -325,8 +322,7 @@ class ViewController: UIViewController {
         self.sixthCatNumber.alpha = 0.0
         self.seventhCatNumber.alpha = 0.0
         
-        
-        // ** 3rd ** -------------------------------------------------------
+        // ** 3rd **
         self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y + 800)
         
         self.personalNetworkLabel.alpha = 0.0
@@ -336,19 +332,13 @@ class ViewController: UIViewController {
         self.acceleratorImageView.alpha = 0.0
         
         self.orangeImageView.alpha = 0.0
-        // self.orangeImageView.center = CGPointMake(self.orangeImageView.center.x, self.orangeImageView.center.y - 800)
-        
         
         self.myViewHeight.constant = 150
         self.myViewTrailing.constant = 100
-        
         self.myViewLeading.constant = 100
         
-    }
-    
-    
-    override func viewDidAppear(animated: Bool) {
         
+        // ------Continue Animation Sequence------
         // ** 1st ** -------------------------------------------------------
         UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
             
