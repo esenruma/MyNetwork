@@ -224,7 +224,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-AF-hYd">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-AF-hYd">
                                             <rect key="frame" x="8" y="8" width="327" height="149"/>
                                             <state key="normal" title=" "/>
                                             <connections>
@@ -421,7 +421,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround 2_MyNetwork-Q" translatesAutoresizingMaskIntoConstraints="NO" id="92M-vb-yRh">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeH-Vf-xPj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeH-Vf-xPj">
                                 <rect key="frame" x="168" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="aZb-U0-ZtD"/>
@@ -1034,7 +1034,7 @@
     </scenes>
     <resources>
         <image name="3D_Red_Button" width="150" height="150"/>
-        <image name="BackButon" width="250" height="250"/>
+        <image name="BackButon" width="100" height="100"/>
         <image name="BackGround 2_MyNetwork-Q" width="200" height="350"/>
         <image name="D-0" width="200" height="200"/>
         <image name="Spinner Ball" width="150" height="150"/>

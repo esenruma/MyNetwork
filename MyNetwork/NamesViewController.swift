@@ -18,7 +18,6 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var blur6: UIVisualEffectView!
     @IBOutlet weak var blur7: UIVisualEffectView!
     
-    
     @IBOutlet weak var collectionFriends: UICollectionView!
     @IBOutlet weak var collectionFamily: UICollectionView!
     @IBOutlet weak var collectionWork: UICollectionView!
@@ -26,25 +25,11 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var collectionSocial: UICollectionView!
     @IBOutlet weak var collectionInnerCircle: UICollectionView!
     @IBOutlet weak var collectionPersonalAdvisor: UICollectionView!
- 
     
     @IBOutlet var backButtonLink: UIButton!
     
     
 // -----------------------------------------------------------
-//    override func viewDidLayoutSubviews() {
-//        
-//        self.blur1.center = CGPointMake(self.blur1.center.x - 400, self.blur1.center.y)
-//        self.blur2.center = CGPointMake(self.blur2.center.x - 400, self.blur2.center.y)
-//        self.blur3.center = CGPointMake(self.blur3.center.x - 400, self.blur3.center.y)
-//        self.blur4.center = CGPointMake(self.blur4.center.x - 400, self.blur4.center.y)
-//        self.blur5.center = CGPointMake(self.blur5.center.x - 400, self.blur5.center.y)
-//        self.blur6.center = CGPointMake(self.blur6.center.x - 400, self.blur6.center.y)
-//        self.blur7.center = CGPointMake(self.blur7.center.x - 400, self.blur7.center.y)
-//        
-//        self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x - 400, self.backButtonLink.center.y)
-//    }
-    
     override func viewWillAppear(animated: Bool) {
         
         self.backButtonLink.alpha = 0.0
@@ -69,10 +54,10 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.blur6.alpha = 1.0
         self.blur7.alpha = 1.0
         
-        //  XCode Message:
+        //  XCode Message: For Above Alpha change
         //  2016-05-31 11:32:36.510 MyNetwork[1827:231455] <UIVisualEffectView 0x7ff0116b4270> is being asked to animate its opacity. This will cause the effect to appear broken until opacity returns to 1.
         
-        // Animation Start = Here vs. 'ViewDidLayoutSubViews'
+        // Animation Start = Here vs. 'ViewDidLayoutSubViews' = Starting Point
         self.blur1.center = CGPointMake(self.blur1.center.x - 400, self.blur1.center.y)
         self.blur2.center = CGPointMake(self.blur2.center.x - 400, self.blur2.center.y)
         self.blur3.center = CGPointMake(self.blur3.center.x - 400, self.blur3.center.y)
@@ -116,7 +101,6 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         UIView.animateWithDuration(1.0, delay: 0.8, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
             self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x + 400, self.backButtonLink.center.y)
             }, completion: nil)
-        
     }
     
 // -----------------------------------------------------------
@@ -159,7 +143,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellA = self.collectionFriends.dequeueReusableCellWithReuseIdentifier("Cell1", forIndexPath: indexPath) as! FriendsCustomCell
             
-            cellA.friendNames.text = namesFor1stCatArray[indexPath.row]
+                cellA.friendNames.text = namesFor1stCatArray[indexPath.row]
             
             return cellA
             
@@ -167,7 +151,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellB = self.collectionFamily.dequeueReusableCellWithReuseIdentifier("Cell2", forIndexPath: indexPath) as! FamilyCustomCell
             
-            cellB.familyNames.text = namesFor2ndCatArray[indexPath.row]
+                cellB.familyNames.text = namesFor2ndCatArray[indexPath.row]
             
             return cellB
             
@@ -175,7 +159,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellC = self.collectionWork.dequeueReusableCellWithReuseIdentifier("Cell3", forIndexPath: indexPath) as! WorkCustomCell
             
-            cellC.workNames.text = namesFor3rdCatArray[indexPath.row]
+                cellC.workNames.text = namesFor3rdCatArray[indexPath.row]
             
             return cellC
             
@@ -183,7 +167,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellD = self.collectionAlumni.dequeueReusableCellWithReuseIdentifier("Cell4", forIndexPath: indexPath) as! AlumniCustomCell
             
-            cellD.alumniNames.text = namesFor4thCatArray[indexPath.row]
+                cellD.alumniNames.text = namesFor4thCatArray[indexPath.row]
             
             return cellD
         
@@ -191,7 +175,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellE = self.collectionSocial.dequeueReusableCellWithReuseIdentifier("Cell5", forIndexPath: indexPath) as! SocialCustomCell
             
-            cellE.socialNames.text = namesFor5thCatArray[indexPath.row]
+                cellE.socialNames.text = namesFor5thCatArray[indexPath.row]
             
             return cellE
         
@@ -199,7 +183,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellF = self.collectionInnerCircle.dequeueReusableCellWithReuseIdentifier("Cell6", forIndexPath: indexPath) as! InnerCircleCustomCell
             
-            cellF.innerCircleNames.text = namesFor6thCatArray[indexPath.row]
+                cellF.innerCircleNames.text = namesFor6thCatArray[indexPath.row]
             
             return cellF
     
@@ -207,7 +191,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let cellG = self.collectionPersonalAdvisor.dequeueReusableCellWithReuseIdentifier("Cell7", forIndexPath: indexPath) as! PersonalAdvisorCustomCell
             
-            cellG.personalAdvisorNames.text = namesFor7thCatArray[indexPath.row]
+                cellG.personalAdvisorNames.text = namesFor7thCatArray[indexPath.row]
             
             return cellG
         }
@@ -230,16 +214,13 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // Go Back to 1st VC
         performSegueWithIdentifier("names2Home", sender: nil)
+        // dismissViewControllerAnimated(true, completion: nil)
         
-        // dismissViewControllerAnimated(true, completion: nil) // NOT WORK WITH 1st VC Animation!!!!
-        
-        // ** nb **: Unable to to use "Flip-Horizontal" VC transition setup - Going Back "interfers" with 1st VC animation // So Used "Cover Vertical" !!!
     }
     
 // -----------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 
@@ -247,6 +228,5 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
 }
