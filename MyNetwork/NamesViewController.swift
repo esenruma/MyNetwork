@@ -58,6 +58,7 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         //  2016-05-31 11:32:36.510 MyNetwork[1827:231455] <UIVisualEffectView 0x7ff0116b4270> is being asked to animate its opacity. This will cause the effect to appear broken until opacity returns to 1.
         
         // Animation Start = Here vs. 'ViewDidLayoutSubViews' = Starting Point
+        self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x - 400, self.backButtonLink.center.y)
         self.blur1.center = CGPointMake(self.blur1.center.x - 400, self.blur1.center.y)
         self.blur2.center = CGPointMake(self.blur2.center.x - 400, self.blur2.center.y)
         self.blur3.center = CGPointMake(self.blur3.center.x - 400, self.blur3.center.y)
@@ -66,41 +67,39 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.blur6.center = CGPointMake(self.blur6.center.x - 400, self.blur6.center.y)
         self.blur7.center = CGPointMake(self.blur7.center.x - 400, self.blur7.center.y)
         
-        self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x - 400, self.backButtonLink.center.y)
-        
-        
         // ---------------------------------
         UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur1.center = CGPointMake(self.blur1.center.x + 400, self.blur1.center.y)
+            self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x + 400, self.backButtonLink.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur2.center = CGPointMake(self.blur2.center.x + 400, self.blur2.center.y)
+            self.blur1.center = CGPointMake(self.blur1.center.x + 400, self.blur1.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.3, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur3.center = CGPointMake(self.blur3.center.x + 400, self.blur3.center.y)
+            self.blur2.center = CGPointMake(self.blur2.center.x + 400, self.blur2.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.4, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur4.center = CGPointMake(self.blur4.center.x + 400, self.blur4.center.y)
+            self.blur3.center = CGPointMake(self.blur3.center.x + 400, self.blur3.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur5.center = CGPointMake(self.blur5.center.x + 400, self.blur5.center.y)
+            self.blur4.center = CGPointMake(self.blur4.center.x + 400, self.blur4.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.6, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur6.center = CGPointMake(self.blur6.center.x + 400, self.blur6.center.y)
+            self.blur5.center = CGPointMake(self.blur5.center.x + 400, self.blur5.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.7, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.blur7.center = CGPointMake(self.blur7.center.x + 400, self.blur7.center.y)
+            self.blur6.center = CGPointMake(self.blur6.center.x + 400, self.blur6.center.y)
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.8, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-            self.backButtonLink.center = CGPointMake(self.backButtonLink.center.x + 400, self.backButtonLink.center.y)
+            self.blur7.center = CGPointMake(self.blur7.center.x + 400, self.blur7.center.y)
             }, completion: nil)
+        
     }
     
 // -----------------------------------------------------------
@@ -113,27 +112,28 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         if collectionView == self.collectionFriends {
             return namesFor1stCatArray.count
             
-        } else if collectionView == self.collectionFamily {
-            return namesFor2ndCatArray.count
+            } else if collectionView == self.collectionFamily {
+                return namesFor2ndCatArray.count
             
-        } else if collectionView == self.collectionWork {
-            return namesFor3rdCatArray.count
+            } else if collectionView == self.collectionWork {
+                return namesFor3rdCatArray.count
             
-        } else if collectionView == self.collectionAlumni {
-            return namesFor4thCatArray.count
+            } else if collectionView == self.collectionAlumni {
+                return namesFor4thCatArray.count
             
-        } else if collectionView == self.collectionSocial {
-            return namesFor5thCatArray.count
+            } else if collectionView == self.collectionSocial {
+                return namesFor5thCatArray.count
             
-        } else if collectionView == self.collectionInnerCircle {
-            return namesFor6thCatArray.count
+            } else if collectionView == self.collectionInnerCircle {
+                return namesFor6thCatArray.count
             
-        } else if collectionView == self.collectionPersonalAdvisor {
-            return namesFor7thCatArray.count
-        }
+            } else if collectionView == self.collectionPersonalAdvisor {
+                return namesFor7thCatArray.count
+            
+        } // End IF-Else
         
         return 0
-    }
+    } // End FUNC
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         

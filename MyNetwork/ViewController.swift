@@ -105,7 +105,8 @@ class ViewController: UIViewController {
     var isAnimating = false
     var counterForDialOMeter = 0
     
-    @IBOutlet weak var myViewHeight: NSLayoutConstraint!    // Constraint Animation Solution
+    // Constraint Animation Solution - For Dial-O-Meter Accelerator
+    @IBOutlet weak var myViewHeight: NSLayoutConstraint!
     @IBOutlet weak var myViewTrailing: NSLayoutConstraint!
     @IBOutlet weak var myViewLeading: NSLayoutConstraint!
     
@@ -315,11 +316,11 @@ class ViewController: UIViewController {
             self.spinnerImageView.alpha = 0.0
             self.SpinnerImageForeground.alpha = 0.0
             self.totalPersonalNetworkNumber.alpha = 0.0
-            self.acceleratorImageView.alpha = 0.0
         
             self.orangeImageView.alpha = 0.0
         
-            self.myViewHeight.constant = 150
+            self.acceleratorImageView.alpha = 0.0       //  Dial-o-meter
+            self.myViewHeight.constant = 150            //  Constraints Animat.for Dial-o-meter
             self.myViewTrailing.constant = 100
             self.myViewLeading.constant = 100
     }
@@ -444,6 +445,7 @@ class ViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }, completion: nil)
         
+        
         // ** Dial-O-Meter Animation Start **
         NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.startDialAnimation), userInfo: nil, repeats: false)
         
@@ -463,10 +465,9 @@ class ViewController: UIViewController {
             }, completion: nil)
         
         // FINALE!! - 3D image behind Tot.No. of Personal Contacts
-        UIView.animateWithDuration(2.5, delay: 2.5, options: [], animations: {
+        UIView.animateWithDuration(3.0, delay: 2.5, options: [], animations: {
             
-            self.orangeImageView.alpha = 1.0
-            // self.orangeImageView.center = CGPointMake(self.orangeImageView.center.x, self.orangeImageView.center.y + 800)
+            self.orangeImageView.alpha = 0.8
             
             }, completion: nil)
         

@@ -309,11 +309,11 @@
                                                 <constraint firstAttribute="width" constant="120" id="Exd-5k-beY"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3D_Red_Button" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-PT-GK9">
-                                            <rect key="frame" x="112" y="233" width="120" height="100"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_MyNetwork" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-PT-GK9">
+                                            <rect key="frame" x="112" y="227" width="120" height="106"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="6TI-Z0-0G7"/>
-                                                <constraint firstAttribute="height" constant="100" id="AQJ-03-G9D"/>
+                                                <constraint firstAttribute="height" constant="106" id="AQJ-03-G9D"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -1033,10 +1033,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3D_Red_Button" width="150" height="150"/>
         <image name="BackButon" width="100" height="100"/>
         <image name="BackGround 2_MyNetwork-Q" width="200" height="350"/>
         <image name="D-0" width="200" height="200"/>
+        <image name="Logo_MyNetwork" width="150" height="150"/>
         <image name="Spinner Ball" width="150" height="150"/>
     </resources>
 </document>
