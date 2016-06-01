@@ -21,6 +21,7 @@
 		E0D79A721CFCB132008C9835 /* SocialCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A711CFCB132008C9835 /* SocialCustomCell.swift */; };
 		E0D79A741CFCB14F008C9835 /* InnerCircleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A731CFCB14F008C9835 /* InnerCircleCustomCell.swift */; };
 		E0D79A761CFCB162008C9835 /* PersonalAdvisorCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D79A751CFCB162008C9835 /* PersonalAdvisorCustomCell.swift */; };
+		E0D879A91CFF03DB000EB983 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D879A81CFF03DB000EB983 /* RefreshViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E0D79A711CFCB132008C9835 /* SocialCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCustomCell.swift; sourceTree = "<group>"; };
 		E0D79A731CFCB14F008C9835 /* InnerCircleCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerCircleCustomCell.swift; sourceTree = "<group>"; };
 		E0D79A751CFCB162008C9835 /* PersonalAdvisorCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAdvisorCustomCell.swift; sourceTree = "<group>"; };
+		E0D879A81CFF03DB000EB983 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				E05E28DC1CF5D83900B5AF8D /* AppDelegate.swift */,
 				E05E28DE1CF5D83900B5AF8D /* ViewController.swift */,
+				E0D879A81CFF03DB000EB983 /* RefreshViewController.swift */,
 				E0C27AFB1CFC84C4006E0780 /* NamesViewController.swift */,
 				E0D79A691CFCB0D4008C9835 /* FriendsCustomCell.swift */,
 				E0D79A6B1CFCB0F0008C9835 /* FamilyCustomCell.swift */,
@@ -166,6 +169,7 @@
 				E0D79A6C1CFCB0F0008C9835 /* FamilyCustomCell.swift in Sources */,
 				E0D79A701CFCB121008C9835 /* AlumniCustomCell.swift in Sources */,
 				E0D79A741CFCB14F008C9835 /* InnerCircleCustomCell.swift in Sources */,
+				E0D879A91CFF03DB000EB983 /* RefreshViewController.swift in Sources */,
 				E0D79A6A1CFCB0D4008C9835 /* FriendsCustomCell.swift in Sources */,
 				E05E28DF1CF5D83900B5AF8D /* ViewController.swift in Sources */,
 				E05E28E51CF5D83900B5AF8D /* MyNetwork.xcdatamodeld in Sources */,

@@ -214,7 +214,6 @@ class NamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // Go Back to 1st VC
         performSegueWithIdentifier("names2Home", sender: nil)
-        // dismissViewControllerAnimated(true, completion: nil)
         
     }
     

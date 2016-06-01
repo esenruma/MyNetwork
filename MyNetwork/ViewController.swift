@@ -117,6 +117,17 @@ class ViewController: UIViewController {
     
     
 // ------------------------------------------------------
+// Refresh Button to update page
+    @IBAction func refreshButton(sender: AnyObject) {
+        
+        // GoTo 3rd VC which sends back here automatically!!
+        performSegueWithIdentifier("home2Refresh", sender: nil)
+        
+    }
+    
+    
+    
+    
 // Button to Details of Names per Category on a Different VC
     @IBAction func getNamesButton(sender: AnyObject) {
         

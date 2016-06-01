@@ -316,14 +316,25 @@
                                                 <constraint firstAttribute="height" constant="106" id="AQJ-03-G9D"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFc-1L-g1O">
+                                            <rect key="frame" x="10" y="10" width="323" height="342"/>
+                                            <state key="normal" title=" "/>
+                                            <connections>
+                                                <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q5R-7O-vU3"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="fy2-qm-hm6" secondAttribute="bottom" constant="8" id="0j2-RX-MHb"/>
                                         <constraint firstItem="B0g-uz-8WB" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="20" id="300-i3-sZU"/>
                                         <constraint firstItem="Oa8-YO-3JN" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="7K2-Ot-eLm"/>
+                                        <constraint firstItem="LFc-1L-g1O" firstAttribute="leading" secondItem="hSa-Wx-j3i" secondAttribute="leading" constant="10" id="EiM-qq-sCP"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="fJW-PT-GK9" secondAttribute="bottom" constant="29" id="JTg-9Y-k5Y"/>
                                         <constraint firstAttribute="trailing" secondItem="B0g-uz-8WB" secondAttribute="trailing" constant="20" id="PwE-W2-osI"/>
+                                        <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="LFc-1L-g1O" secondAttribute="bottom" constant="10" id="Rcl-fn-DtO"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="RwA-Ip-tHa"/>
+                                        <constraint firstAttribute="trailing" secondItem="LFc-1L-g1O" secondAttribute="trailing" constant="10" id="S5c-ky-6fx"/>
+                                        <constraint firstItem="LFc-1L-g1O" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="10" id="Tzb-J0-nEv"/>
                                         <constraint firstItem="fJW-PT-GK9" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="Vcj-iL-JL4"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="B0g-uz-8WB" secondAttribute="bottom" constant="8" id="YLw-te-eUt"/>
                                         <constraint firstItem="nD5-wZ-FQc" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="ePm-Gm-iip"/>
@@ -400,11 +411,45 @@
                         <outlet property="totalContactsNumber" destination="Rn3-lI-Zw8" id="kY0-78-lDv"/>
                         <outlet property="totalPersonalNetworkNumber" destination="AVp-SD-zZo" id="Tvf-sy-BQN"/>
                         <segue destination="eI6-uY-T8O" kind="presentation" identifier="home2Names" modalTransitionStyle="flipHorizontal" id="JST-y7-ahg"/>
+                        <segue destination="PVy-q6-AkT" kind="presentation" identifier="home2Refresh" modalTransitionStyle="crossDissolve" id="K7D-Gm-cdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227.5" y="428.5"/>
+            <point key="canvasLocation" x="239.5" y="428.5"/>
+        </scene>
+        <!--Refresh View Controller-->
+        <scene sceneID="UhC-1Q-z3O">
+            <objects>
+                <viewController id="PVy-q6-AkT" customClass="RefreshViewController" customModule="MyNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i8y-VV-uVU"/>
+                        <viewControllerLayoutGuide type="bottom" id="9j0-Ms-dr4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6w2-Y4-byL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround 2_MyNetwork-Q" translatesAutoresizingMaskIntoConstraints="NO" id="3bL-48-rBJ">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9j0-Ms-dr4" firstAttribute="top" secondItem="3bL-48-rBJ" secondAttribute="bottom" id="6K5-KS-DeZ"/>
+                            <constraint firstItem="3bL-48-rBJ" firstAttribute="leading" secondItem="6w2-Y4-byL" secondAttribute="leadingMargin" constant="-20" id="JRw-8e-utj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3bL-48-rBJ" secondAttribute="trailing" constant="-20" id="bbb-X7-ce1"/>
+                            <constraint firstItem="3bL-48-rBJ" firstAttribute="top" secondItem="6w2-Y4-byL" secondAttribute="topMargin" id="xQy-vk-zGw"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="refresh2Home" modalTransitionStyle="crossDissolve" id="MHN-fj-eC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qL2-V8-3Wl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434.5" y="1258.5"/>
         </scene>
         <!--Names View Controller-->
         <scene sceneID="Rb4-Ms-pI0">
@@ -1039,4 +1084,7 @@
         <image name="Logo_MyNetwork" width="150" height="150"/>
         <image name="Spinner Ball" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MHN-fj-eC3"/>
+    </inferredMetricsTieBreakers>
 </document>
