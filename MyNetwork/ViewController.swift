@@ -115,6 +115,13 @@ class ViewController: UIViewController {
     var personalNetworkSize = Int()
     var counterForNetwork = 0
     
+    // Ping effect
+    @IBOutlet var pingImage: UIImageView!
+    
+    @IBOutlet var pingTopConstraint: NSLayoutConstraint!
+    @IBOutlet var pingLeftConstraint: NSLayoutConstraint!
+    @IBOutlet var pingRightConstraint: NSLayoutConstraint!
+    
     
 // ------------------------------------------------------
 // Refresh Button to update page
@@ -334,15 +341,15 @@ class ViewController: UIViewController {
             self.myViewHeight.constant = 150            //  Constraints Animat.for Dial-o-meter
             self.myViewTrailing.constant = 100
             self.myViewLeading.constant = 100
+        
+            self.pingImage.alpha = 0.0                  //  Ping Effect
+            self.pingTopConstraint.constant = 320       //  Top Constrant Animat.
+            self.pingLeftConstraint.constant = 145
+            self.pingRightConstraint.constant = 145
     }
     
 // ** Animations ** //
     override func viewDidAppear(animated: Bool) {
-        
-        // Main 3 Blur - to Alpha 1.0
-        self.blurBottom.alpha = 1.0
-        self.blurMiddle.alpha = 1.0
-        self.blurTopBig.alpha = 1.0
         
         //  XCode Message: For Above Alpha change
         //  2016-05-31 12:28:28.624 MyNetwork[819:258064] <UIVisualEffectView 0x1556556b0> is being asked to animate its opacity. This will cause the effect to appear broken until opacity returns to 1.
@@ -363,6 +370,8 @@ class ViewController: UIViewController {
         // ------Continue Animation Sequence------
         // ** 1st **
         UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.blurBottom.alpha = 1.0
             
             self.blurBottom.center = CGPointMake(self.blurBottom.center.x, self.blurBottom.center.y - 800)
             
@@ -388,6 +397,8 @@ class ViewController: UIViewController {
         
         // ** 2nd **
         UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
+            
+            self.blurMiddle.alpha = 1.0
             
             self.blurMiddle.center = CGPointMake(self.blurMiddle.center.x, self.blurMiddle.center.y - 400)
             }, completion: nil)
@@ -426,6 +437,8 @@ class ViewController: UIViewController {
         // ** 3rd **
         UIView.animateWithDuration(1.0, delay: 0.9, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: [], animations: {
             // BLUR-TOP
+            
+            self.blurTopBig.alpha = 1.0
             
             self.blurTopBig.center = CGPointMake(self.blurTopBig.center.x, self.blurTopBig.center.y - 800)
             }, completion: nil)
@@ -474,6 +487,33 @@ class ViewController: UIViewController {
                 spinnerRotate()
                 spinnerRotate()
             }, completion: nil)
+        
+        
+        // ================Ping=================
+        UIView.animateWithDuration(1.0, delay: 2.0, options: [], animations: {
+            
+            self.pingImage.alpha = 1.0
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.8, delay: 2.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: [], animations: {
+            // PING
+            
+            self.pingTopConstraint.constant = 50
+            self.pingLeftConstraint.constant = 50
+            self.pingRightConstraint.constant = 50
+
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.4, delay: 2.9, options: [], animations: {
+            
+            self.pingImage.alpha = 0.0
+            
+            }, completion: nil)
+        
+        // =====================================
+        
         
         // FINALE!! - 3D image behind Tot.No. of Personal Contacts
         UIView.animateWithDuration(3.0, delay: 2.5, options: [], animations: {

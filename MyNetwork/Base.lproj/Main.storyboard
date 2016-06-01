@@ -301,6 +301,9 @@
                                                 <constraint firstAttribute="height" constant="90" id="TGQ-Dy-Vvg"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ping_5pt" translatesAutoresizingMaskIntoConstraints="NO" id="Aby-7y-UoP">
+                                            <rect key="frame" x="50" y="50" width="243" height="273"/>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nD5-wZ-FQc">
                                             <rect key="frame" x="112" y="278" width="120" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,8 +330,11 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="fy2-qm-hm6" secondAttribute="bottom" constant="8" id="0j2-RX-MHb"/>
                                         <constraint firstItem="B0g-uz-8WB" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="20" id="300-i3-sZU"/>
+                                        <constraint firstAttribute="trailing" secondItem="Aby-7y-UoP" secondAttribute="trailing" constant="50" id="6m5-uF-ld8"/>
                                         <constraint firstItem="Oa8-YO-3JN" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="7K2-Ot-eLm"/>
+                                        <constraint firstItem="Aby-7y-UoP" firstAttribute="top" secondItem="hSa-Wx-j3i" secondAttribute="top" constant="50" id="CEm-Rp-cuq"/>
                                         <constraint firstItem="LFc-1L-g1O" firstAttribute="leading" secondItem="hSa-Wx-j3i" secondAttribute="leading" constant="10" id="EiM-qq-sCP"/>
+                                        <constraint firstItem="Aby-7y-UoP" firstAttribute="leading" secondItem="hSa-Wx-j3i" secondAttribute="leading" constant="50" id="F7m-R8-wxt"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="fJW-PT-GK9" secondAttribute="bottom" constant="29" id="JTg-9Y-k5Y"/>
                                         <constraint firstAttribute="trailing" secondItem="B0g-uz-8WB" secondAttribute="trailing" constant="20" id="PwE-W2-osI"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="LFc-1L-g1O" secondAttribute="bottom" constant="10" id="Rcl-fn-DtO"/>
@@ -340,6 +346,7 @@
                                         <constraint firstItem="nD5-wZ-FQc" firstAttribute="centerX" secondItem="hSa-Wx-j3i" secondAttribute="centerX" id="ePm-Gm-iip"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="nD5-wZ-FQc" secondAttribute="bottom" constant="34" id="enN-aV-e3E"/>
                                         <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="Oa8-YO-3JN" secondAttribute="bottom" constant="39" id="gQw-uX-GJf"/>
+                                        <constraint firstItem="fy2-qm-hm6" firstAttribute="top" secondItem="Aby-7y-UoP" secondAttribute="bottom" constant="39" id="lGw-fn-KpV"/>
                                         <constraint firstItem="B0g-uz-8WB" firstAttribute="leading" secondItem="hSa-Wx-j3i" secondAttribute="leading" constant="20" id="r9c-Ao-zFG"/>
                                     </constraints>
                                 </view>
@@ -398,6 +405,10 @@
                         <outlet property="myViewTrailing" destination="PwE-W2-osI" id="yBi-WB-gEv"/>
                         <outlet property="orangeImageView" destination="fJW-PT-GK9" id="9VK-d6-Q9f"/>
                         <outlet property="personalNetworkLabel" destination="fy2-qm-hm6" id="DXV-Ri-bgI"/>
+                        <outlet property="pingImage" destination="Aby-7y-UoP" id="MRG-Lh-wkF"/>
+                        <outlet property="pingLeftConstraint" destination="F7m-R8-wxt" id="VNx-gL-Ags"/>
+                        <outlet property="pingRightConstraint" destination="6m5-uF-ld8" id="LhK-63-3D1"/>
+                        <outlet property="pingTopConstraint" destination="CEm-Rp-cuq" id="41g-Ec-rWk"/>
                         <outlet property="secondCatLabel" destination="gFn-du-xqO" id="9xQ-gh-gty"/>
                         <outlet property="secondCatNumber" destination="Er7-21-ZUO" id="0T7-w1-c1e"/>
                         <outlet property="seventhCatLabel" destination="gPT-ny-VRm" id="olW-hJ-wgq"/>
@@ -1082,6 +1093,7 @@
         <image name="BackGround 2_MyNetwork-Q" width="200" height="350"/>
         <image name="D-0" width="200" height="200"/>
         <image name="Logo_MyNetwork" width="150" height="150"/>
+        <image name="Ping_5pt" width="150" height="150"/>
         <image name="Spinner Ball" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
