@@ -129,12 +129,9 @@ class ViewController: UIViewController {
         
         // GoTo 3rd VC which sends back here automatically!!
         performSegueWithIdentifier("home2Refresh", sender: nil)
-        
     }
     
-    
-    
-    
+// ------------------------------------------------------
 // Button to Details of Names per Category on a Different VC
     @IBAction func getNamesButton(sender: AnyObject) {
         
@@ -353,6 +350,8 @@ class ViewController: UIViewController {
         
         //  XCode Message: For Above Alpha change
         //  2016-05-31 12:28:28.624 MyNetwork[819:258064] <UIVisualEffectView 0x1556556b0> is being asked to animate its opacity. This will cause the effect to appear broken until opacity returns to 1.
+        // SOLUTION: "you cannot change the alpha of a visual effect view. The alpha always has to be one"
+        
         
         
         // ** Placed here vs."viewDidLayoutSubviews" **
